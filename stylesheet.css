@@ -1,0 +1,187 @@
+/* COLOR GUIDE
+#3B170B for Dark Brown
+#FFFFF0 for Light Ivory
+---------------------------------*/
+
+/* OVERALL
+---------------------------------*/
+body {
+	background-color: white;
+	background-image: url(image/wood.jpg); 
+	font-family:"Optima";
+	height: 100%;
+	}
+a:link {
+	color: #FFFFF0;
+	text-decoration:none;
+	}
+a:visited {
+	color:  #FFFFF0;
+	text-decoration:none;
+	}
+a:hover {
+	color: grey;
+	text-decoration:none;
+	}
+.category {
+	font-style: underlined;
+	font-weight: bold;
+	margin-bottom: 0px;
+	}
+.jobtitle { 
+	font-weight: bold;
+	clear:both;
+	}
+p {
+	text-align: left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	clear:both;
+	color: #3B170B;
+	}
+br {
+	text-align: left;
+	color: #3B170B;
+	}
+/* HEAD
+---------------------------------*/
+header {
+	background-color:#f3e1d3;
+	color:#3B170B ;
+	font-size:2em;
+	width:90%;
+	height:110px;
+	margin:20px auto 20px auto;
+	padding: 10px 0;
+	border: 5px solid #3B170B;
+	position:relative;
+}
+header p {
+	font-size:.75em;
+	font-style:italic;
+	text-align:left;
+	clear:none;
+}
+
+/* NAVIGATION 
+---------------------------------*/
+nav ul {
+	background:#3B170B;
+	width:90%; 
+	margin:20px auto 20px auto;
+	position:relative;
+	overflow:auto;
+	padding:0;
+	clear:both;
+	text-align:center;
+	}
+nav li {
+	list-style-type:none;	
+	display:inline;
+	float:left;
+	text-align:center;
+	}
+nav li a {
+	display:block;
+	width:100px;
+	}
+#portfolio ul {
+	background:#3B170B;
+	width:95%; 
+	margin:5px auto 5px auto;
+	position:relative;
+	overflow:auto;
+	padding:0;
+	clear:both;
+	text-align:center;
+	}
+#portfolio  li {
+	list-style-type:none;	
+	display:inline;
+	float:left;
+	text-align:center;
+	}
+#portfolio  li a {
+	display:block;
+	width:200px;
+	}
+ul.textul {
+	list-style-type:disc;
+	float:left;
+	text-align:left;
+	margin:0px;
+	}
+ul.indent {
+	list-style-type:none;	
+	text-align: left;
+	margin: 0px;
+	padding-left: 25px;
+	}
+/* MAIN CONTENT 
+---------------------------------*/
+#content {
+	background:#3B170B;
+	width:90%;
+	margin:20px auto 20px auto;
+	position:relative;
+	text-align: center;
+	}
+section {
+	padding: 10px;
+	}
+article {
+	padding: 10px;
+	background-color: #FFFFF0;
+	}
+/* IMAGES 
+---------------------------------*/
+.left {
+	float:left;
+	position: relative;
+	}
+.center {
+	padding:20px;
+	text-align:center;
+	float:center;
+	position:relative;
+	}
+
+.thumbs {
+	padding: 10px 30px 30px 50px;
+	text-align: center;
+	}
+.thumbs a {
+	display: inline-block;
+	margin: 20px 20px 0 0;
+	}
+.thumbs a:hover img {
+	border-color: #3B170B;;
+	}
+.thumbs:after {
+	content: " ";
+	display: block;
+	clear: both;
+	}
+.gallery {
+	height: 300px;
+	padding: 30px 0;
+	}
+.thumbs img,
+.gallery img {
+	border: 5px solid #FFFFF0;
+	background: #fff;
+	}
+.hidden {
+	display: none;
+	}
+/* FOOTER 
+---------------------------------*/
+#footer {
+	background:#3B170B;
+	width:90%;
+	position:relative;
+ 	margin:20px auto 20px auto;
+ 	color: #FFFFF0;
+ 	font-size: 0.75em;
+ 	text-align: center;
+	}

@@ -1,0 +1,193 @@
+/* COLOR GUIDE
+   #CEECF5: Light Blue
+   #E6E6E6: Light Gray
+   #FFFFF0: Light Ivory
+   #2E2E2E: Dark Gray
+   #4C4646: Dark Gray for Text
+   #3B170B: Dark Brown
+   
+---------------------------------*/
+
+/* OVERALL
+---------------------------------*/
+body {
+	background-image: url("../images/wood.jpg");
+	font-family: "Optima";
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+a:link, a:visited, a:hover {
+	color: white;
+	text-decoration: none;
+}
+.italic {
+	font-style: italic;
+	color: #3B170B;
+}
+.italic-center {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	font-style: italic;
+}
+.underlined-category {
+	text-decoration: underline;
+	font-weight: bold;
+}
+.bold-title { 
+	font-weight: bold;
+	clear: both;
+}
+ul.textul {
+	list-style-type: disc;
+	float: left;
+	text-align: left;
+	margin: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+ul.indent {
+	list-style-type: none;	
+	text-align: left;
+	margin: 0px;
+	padding-left: 25px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/* HEADER
+---------------------------------*/
+header {
+	margin: 10px;
+	width: 100%;
+	clear: both;
+	font-family: "Optima";
+}
+#banner {
+	float: left;
+	font-size: 3em;
+	font-weight: bold;
+	margin: 0;
+	padding: 10px;
+}
+#banner a:link, #banner a:visited, #banner a:hover {
+	color: #3B170B;
+	text-decoration: none;
+}
+#social-media {
+	float: right;
+	margin: 20px;
+	padding-right: 10%;
+}
+#social-media a:link, #social-media a:visited {
+	color: white;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+#social-media a:hover {
+	color: #3B170B;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+/* NAVIGATION
+---------------------------------*/
+nav ul {
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	width: 75%; 
+	margin: 98px 0 0 120px;
+	position: relative;
+	overflow: auto;
+	text-align: center;
+	padding: 0;
+}
+nav li {
+	list-style-type: none;	
+	display: inline;
+	float: left;
+	font-family: "Optima";
+	text-align: center;
+	background: #2E2E2E;
+	margin: 0px 4px 0px 4px;
+	padding: 4px;
+}
+nav li a {
+	display: block;
+	width: 100px;
+}
+nav ul a:link, nav ul a:visited {
+	color: white;
+	text-decoration: none;
+}
+nav ul a:hover {
+	color: #3B170B;
+	text-decoration: none;
+}
+nav ul li:hover {
+	background: #FFFFF0;
+}
+
+/* MAIN CONTENT
+---------------------------------*/
+#content {
+	background-color: #3B170B; 
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-family: "Optima";
+	width: 90%;
+	height: 95%;
+	position: relative;
+	margin: 0;
+	padding: 10px 10px 10px 0;
+	clear: both;
+	font-size: 1em;
+}
+#content article {
+	background-color: #FFFFF0;
+	background-image: url("../images/binding.png");
+	background-position: left;
+	background-repeat: repeat-y; 
+	padding: 20px 20px 20px 50px;
+	margin-top: 0;
+	clear: both;
+	position: relative;
+}
+#content p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	clear: both;
+}
+/* BLOG
+---------------------------------*/
+.events {
+   margin: 10px 0;
+}
+.events p {
+    font-size: 0.9em;
+    padding-top: 3px;
+}
+
+/* IMAGES
+---------------------------------*/
+.left {
+	float: left;
+	position: absoute;
+	clear: none;
+	padding: 10px;
+	width: 100px;
+	height: 100px;
+}
+	
+/* FOOTER
+---------------------------------*/
+footer {
+    margin: 10px 0 10px 0;
+    clear: none;
+    color: #3B170B;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}

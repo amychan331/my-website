@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.so>
+	Options +FollowSymLinks
+
+	RewriteEngine on
+	RewriteBase /
+	RewriteRule ^(.*)\.html$ $1.php [R=301,L]
+</IfModule>

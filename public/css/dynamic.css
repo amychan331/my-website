@@ -1,0 +1,18 @@
+/* 
+	For pages that often changes and get new articles.
+	Example: Blog, Portfolio 
+---------------------------------*/
+
+/* MAIN CONTENT
+---------------------------------*/
+#content {
+	color: #4C4646;
+}
+#content a:link, #content a:visited {
+	color: #3B170B;
+	text-decoration: none;
+}
+#content a:hover {
+	color: grey;
+	text-decoration: none;
+}

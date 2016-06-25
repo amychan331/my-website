@@ -1,0 +1,18 @@
+/* 
+	For pages that rarely changes and usually contain a little number of articles.
+	Example: About, Resume, Contact   
+---------------------------------*/
+
+/* MAIN CONTENT
+---------------------------------*/
+#content {
+	color: #3B170B;
+}
+#content a:link, #content a:visited {
+	color: brown;
+	text-decoration: none;
+}
+#content a:hover {
+	color: grey;
+	text-decoration: none;
+}

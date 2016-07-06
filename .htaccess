@@ -3,5 +3,5 @@
 
 	RewriteEngine on
 	RewriteBase /
-	RewriteRule ^(.*)\.html$ $1.php [R=301,L]
+	RewriteRule ^(\w+)\.html$ $1.php [NC] 
 </IfModule>

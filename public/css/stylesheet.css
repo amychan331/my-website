@@ -66,6 +66,7 @@ header {
 	font-family: "Optima";
 }
 #banner {
+	clear: both;
 	float: left;
 	font-size: 3em;
 	font-weight: bold;

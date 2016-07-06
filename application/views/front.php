@@ -18,22 +18,23 @@
 </head>
 <body>
 	<div id="indexContent">
-		<header>
-			<div id="banner"><a href="index.php">Craft + Tech</a></div>
+		<div id='indexArticle'>
+			<header>
+				<div id="banner"><a href="index.php">Craft + Tech</a></div>
+			</header>
+		<?php
+			$content = new Content();
+			echo "<hr>";
+			echo "<div id='indexNav'>";
+				require_once('application/views/menu.php'); 
+			echo "</div>";
+		?>
+			<hr>
 			<div id="social-media">
 				<a href="https://twitter.com/CraftPlusTech"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="View Amy's Twitter Page"></i></a>
 				<a href="https://www.linkedin.com/in/amyyychan"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true" title="View Amy's LinkedIn Profile"></i></a>
 				<a href="https://github.com/amychan331"><i class="fa fa-github-square fa-2x" aria-hidden="true" title="View Amy's Github Repos"></i></a>
-			</div>
-		</header>
-
-		<?php
-			echo "<div id='indexArticle'>";
-				$content = new Content();
-				echo "<div id='indexNav'>";
-					require_once('application/views/menu.php'); 
-				echo "</div>";
-			echo "</div>";
-		?>
+			</div>	
+		</div>	
 	</div>
 	<?php require_once('application/views/footer.php'); ?>

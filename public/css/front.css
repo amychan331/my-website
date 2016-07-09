@@ -72,14 +72,13 @@ header {
 }
 #indexNav li {
 	background-color: #FFFFF0;
-	clear: both;
 	display: block;
 	float: none;
 	list-style-type: none;
 }
 
 #indexNav li a {
-	width: 100%
+	margin: auto;
 }
 
 /* SOCIAL MEDIA

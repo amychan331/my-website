@@ -15,7 +15,7 @@
 </head>
 <body>
 	<header>
-		<div id="banner"><a href="index.php">Craft + Tech</a></div>
+		<div id="banner"><a href="index.html">Craft + Tech</a></div>
 		<div id="social-media">
 			<a href="https://twitter.com/CraftPlusTech"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="View Amy's Twitter Page"></i></a>
 			<a href="https://www.linkedin.com/in/amyyychan"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true" title="View Amy's LinkedIn Profile"></i></a>

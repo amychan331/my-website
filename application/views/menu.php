@@ -1,8 +1,8 @@
 <nav>
 	<ul>
-		<li><a href="about.html">About</a></li>
-		<li><a href="blog.html">Blog</a></li>
-		<li><a href="portfolio.html">Portfolio</a></li>
-		<li><a href="resume.html">Resume</a></li>
+		<a href="about.html"><li>About</li></a>
+		<a href="blog.html"><li>Blog</li></a>
+		<a href="portfolio.html"><li>Portfolio</li></a>
+		<a href="resume.html"><li>Resume</li></a>
 	</ul>
 </nav>

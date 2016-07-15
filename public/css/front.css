@@ -1,17 +1,12 @@
 /* LINK
 ---------------------------------*/
-#indexNav a:link {
+#indexNav a:link, #indexNav a:visited{
 	color: #3B170B;
-	text-decoration:none;
-	}
-#indexNav a:visited {
-    color: #3B170B;
-	text-decoration:none;
-	}
+}
+
 #indexNav a:hover {
 	color: grey;
-	text-decoration: none;
-	}
+}
 
 /* BODY
 ---------------------------------*/
@@ -58,6 +53,8 @@ header {
 ---------------------------------*/
 #indexNav {
 	clear: both;
+	font-size: 2em;
+	font-family: Copperplate, "Courier New", serif;
 }
 
 #indexNav nav {
@@ -65,19 +62,15 @@ header {
 }
 
 #indexNav ul { 
-	font-size: 2em;
-	font-family: Copperplate, "Courier New", serif;
-	color: #3B170B;
+	float: none;
 	margin: auto;
+	padding: 0;
 }
+
 #indexNav li {
 	background-color: #FFFFF0;
 	display: block;
 	float: none;
-	list-style-type: none;
-}
-
-#indexNav li a {
 	margin: auto;
 }
 

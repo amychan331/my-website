@@ -1,3 +1,6 @@
+<?php
+	ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +18,11 @@
 </head>
 <body>
 	<header>
-		<div id="banner"><a href="index.html">Craft + Tech</a></div>
+		<div id="banner">
+			<div class="bevel top"></div>
+			<p class="site-title"><a href="index.html">Craft + Tech</a></p>
+			<div class="bevel bottom"></div>
+		</div>
 		<div id="social-media">
 			<a href="https://twitter.com/CraftPlusTech"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="View Amy's Twitter Page"></i></a>
 			<a href="https://www.linkedin.com/in/amyyychan"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true" title="View Amy's LinkedIn Profile"></i></a>

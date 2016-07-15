@@ -24,12 +24,12 @@
 			</header>
 		<?php
 			$content = new Content();
-			echo "<hr>";
+			echo "<hr></hr>";
 			echo "<div id='indexNav'>";
 				require_once('application/views/menu.php'); 
 			echo "</div>";
+			echo "<hr></hr>";
 		?>
-			<hr>
 			<div id="social-media">
 				<a href="https://twitter.com/CraftPlusTech"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="View Amy's Twitter Page"></i></a>
 				<a href="https://www.linkedin.com/in/amyyychan"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true" title="View Amy's LinkedIn Profile"></i></a>

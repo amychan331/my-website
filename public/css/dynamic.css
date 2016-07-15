@@ -3,9 +3,177 @@
 	Example: Blog, Portfolio 
 ---------------------------------*/
 
+/* Gallery
+---------------------------------*/
+.gallery {
+	background: rgba(255, 255, 255, 0.6);
+	display: inline-block;
+	position: relative;
+	height: 250px;
+	margin: 10px;
+	position: relative;
+	width: 475px;
+}
+
+.slides {
+	height: 250px;
+	width: 375px;
+	margin: auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.slides ul {
+	left: 0;
+	list-style: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	top: 0;
+}
+
+.slides li {
+	display: table;
+	height: 250px;
+	table-layout: fixed;
+	width: 380px;
+}
+
+.slides li .slide-img {
+	display: table-cell;
+	table-layout: fixed;
+	width: 380px;
+    vertical-align: middle;
+}
+
+.slides img {
+	display: table-cell;
+	width: 100%;
+	table-layout:fixed;
+}
+
+.carousel-control i {
+	color: #666666;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	position: relative;
+	z-index: 100;
+}
+
+.carousel-control i:hover {
+	color: #4d4d4d;
+}
+
+.prev i {
+	float: left;
+	margin-left: 5px;
+	top: 100px;
+}
+
+.next i {
+	float: right;
+	margin-right: 5px;
+	top: 100px;
+}
+
+/* Lightbox
+---------------------------------*/
+#lightbox {
+	background: rgba(77, 77, 77, 0.6);
+	left: 0;
+	height: 100%;
+	position: fixed;
+	text-align: center;
+	top: 0;
+	width: 100%;
+	z-index: 200;
+}
+
+#lightcontainer {
+	display: inline-block;
+	height: 100%;
+	left: 20px;
+	padding: 25px;
+	position: relative;
+	width: 100%;
+	overflow: auto;
+}
+
+#lightbox img {
+	border: 5px solid #4d4d4d;
+	box-shadow: 0 0 25px black;
+	-webkit-box-shadow: 0 0 25px black;
+	-moz-box-shadow: 0 0 25px black;
+	max-width: 940px;
+	top: 5%;
+	margin-bottom: 5%;
+}
+
+/* Gallery Aside
+---------------------------------*/
+aside {
+	background-color: rgba(255, 255, 255, 0.6);
+	display: inline-block;
+	position: relative;
+	margin: 10px;
+	top: 0;
+	vertical-align: top;
+	width: 50%;
+}
+
+aside .description {
+	background-color: rgba(255, 255, 255, 0.6);
+    border-top: 0;
+    border-bottom: 0;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+}
+
+aside .bevel {
+	border-color: rgba(255, 255, 255, 0.6);
+	border-style: solid;
+	border-width: 25px;
+	height: 0px;
+}
+
+aside .top {
+	border-top: 0;
+	border-left-color: #666666;
+	border-right-color: #666666;
+}
+
+aside .bottom {
+	border-bottom: 0;
+	border-left-color: #666666;
+	border-right-color: #666666;
+}
+
+aside h2 {
+	display: inline;
+}
+
+aside span, aside .github i {
+	vertical-align: top;
+}
+
+@keyframes spin { 100% {-webkit-transform: rotate(360deg); transform: rotate(360deg);} }
+@-moz-keyframes spin { 100% {-moz-transform: rotate(360deg);} }
+@-webkit-keyframes spin { 100% {-webkit-transform: rotate(360deg);} }
+
+aside a.github {
+	display: inline-block;
+}
+
+aside a.github:active, aside a.github:focus {
+	animation-name: spin;
+	animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+}
+
 /* WordPress: 3.0 - Typography
 ---------------------------------*/
-
 .wp-entry body,
 .wp-entry button,
 .wp-entry input,

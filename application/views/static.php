@@ -3,7 +3,7 @@
     require_once('application/views/header.php');
     require_once('application/views/menu.php'); 
 ?>
-<div id="content">
+<div id="container">
 	<?php
 		$content = new Content();
 	?>

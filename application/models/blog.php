@@ -23,19 +23,20 @@ class Content {
 			return $taglink;
 		}
 
-		echo "<article>";
+		echo "<div id = content>";
 
 			// Begin looping
 			if ( $wp_query->have_posts() ) {
 				while ( $wp_query->have_posts() ) : $wp_query->the_post();
 					// Output the post
 					echo "<br />"; 
-					the_title(); echo "<br />";
+					echo "<h2>"; the_title(); echo "</h2>";
 			    	the_date(); echo "<br />";
 			    	the_tags('Tags: ', ' • '); echo "<br />";
 			    	echo "<div class='wp-entry'>";
 						the_excerpt();
 					echo "</div>";
+					echo "<hr></hr>";
 				endwhile;
 			} else {
 				echo "No posts found. ";
@@ -62,7 +63,7 @@ class Content {
 			echo "</div>";
 
 		wp_reset_postdata(); 
-		echo "</article>";
+		echo "</div>";
 	}
 }
 ?>

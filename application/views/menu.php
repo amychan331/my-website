@@ -4,5 +4,6 @@
 		<a href="blog.html"><li>Blog</li></a>
 		<a href="portfolio.html"><li>Portfolio</li></a>
 		<a href="resume.html"><li>Resume</li></a>
+		<a href="contact.html"><li>Contact</li></a>
 	</ul>
 </nav>

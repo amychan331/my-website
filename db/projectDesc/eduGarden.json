@@ -1,5 +1,5 @@
 {
 	"title": "EduGarden",
-	"desc": "The idea of shopping cart came from my PHP Programming classes, which ask the student to select one of three type of projects types.",
+	"desc": "Started as a shopping cart project at school, it has since been expanded a site for me to test out my skills. It's where I did my first self-made PHP MVC and section handler, my first encounter with the security guidebook at OWASP, and building my first MySQL database from scratch. Being the first of many things, it is a really fun experiment... ",
 	"github": "https://github.com/amychan331/schoolProject-EduGarden"
 }

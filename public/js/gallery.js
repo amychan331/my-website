@@ -1,5 +1,4 @@
 // Function for image sliding is modified from "Create A Simple Infinite Carousel with jQuery" by Kevin Liew at http://www.queness.com/post/923/create-a-simple-infinite-carousel-with-jquery
-
 $(document).ready(function() {
 
 	// Get variable of how far to slide when user click on the control buttons
@@ -43,8 +42,8 @@ $(document).ready(function() {
 		$('#lightbox').remove();
 	})
 
-	// Function to delay link redirection for the github icon spin animation
-	$('a.github').click(function(e) {
+	// Function to delay link redirection for the icon spin animation
+	$('a.icon').click(function(e) {
 		e.preventDefault();
 		$redirect = this.href;
 		setTimeout( function(){ 

@@ -2,3 +2,222 @@
 	For pages that rarely changes and usually contain a little number of articles.
 	Example: About, Resume, Contact   
 ---------------------------------*/
+article section span {
+	position: relative;
+}
+
+article section br {
+	margin-bottom: 1em;
+}
+
+aside {
+	display: block;
+	text-align: left;
+	width: auto;
+}
+
+aside img {
+	margin-right: 15px;
+	margin-top: 0;
+}
+
+
+/* CALENDER
+---------------------------------*/
+
+/* CONTACT
+---------------------------------*/
+form {
+	display: inline-block;
+	float: left;
+	text-align: left;
+	width: 60%;
+}
+
+form label {
+	display: block;
+}
+
+form input, form textarea {
+    background: white;
+	border: 2px groove white; 
+    box-shadow: inset 0 0 8px  rgba(59,23,11,0.3),  0 0 16px rgba(59,23,11,0.3);
+    -o-box-shadow: inset 0 0 8px  rgba(59,23,11,0.3),  0 0 16px rgba(59,23,11,0.3);
+    -moz-box-shadow: inset 0 0 8px  rgba(59,23,11,0.3), 0 0 16px rgba(59,23,11,0.3); 
+    -webkit-box-shadow: inset 0 0 8px  rgba(59,23,11,0.3), 0 0 16px rgba(59,23,11,0.3); 
+    margin: 4px 0;
+    padding: 6px;
+    width: 75%;
+}
+
+form input:active, form textarea:active, form input:focus, form textarea:focus {
+	border: 2px groove #D45328;
+}
+
+form input[name="submit"] {
+	color: #D45328;
+	float: right;
+	margin-top: 8px;
+	margin-right: 23%;
+	width: 100px;
+}
+
+form input[name="submit"]:hover, form input[name="submit"]:active, form input[name="submit"]:focus {
+	color: #875342;
+	font-weight: bold;
+	text-decoration: underline dashed;
+}
+
+form .error {
+	color: red;
+}
+
+#social {
+	display: inline-block;
+	position: relative;
+	width: 40%;
+}
+
+/* IMG
+---------------------------------*/
+/* 
+Code modified from "Code a Spinning Circular Menu With CSS" by Joshua Johnson at https://designshack.net/articles/css/code-a-spinning-circular-menu-with-css/ 
+The circle no longer spins here, since I did not want animation on the About page.
+Instead of have a circular color background for each li's icon and then calculate icon's left(x) and top(y) location on the .icon-circle as the original did,
+I extended the height of each li's background and turn the li into a rectangle, then I changed the background color to gradient.
+I then rotate the rectangle. With the gradient going from color to translucent, the backgrond of the head where the icon is would be colored, 
+while its tail that overlap the icon on the other side would be translucent and not blocking the other icon.
+That way, I don't have to do any calculation for left(x) and top(y) placement if new icons are added.
+*/
+
+/* the id container that holds everything */
+#circle {
+	display: block;
+	position: relative;
+	margin: 0 25px 25px 25px;
+	width: 250px;
+}
+
+/* smaller circle that overlaps the colored circle with background color (#FFFFF0) */
+#circle:before {
+	content: " ";
+	background: #FFFFF0;
+	border-radius: 50%;
+	display: block;
+	height: 245px;
+	position: absolute;
+	text-align: center;
+	width: 245px;
+	margin-left: 2px;
+	margin-top: 18.5px;
+	z-index: 10;
+}
+
+/* the circle that holds the icons */
+.icon-circle {
+	display: block;
+	position: relative;
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	background: #666666;
+}
+
+.icon-circle li {
+	background-image: linear-gradient(to bottom, rgba(255,255,240,255)50%, rgba(255,255,240,0) 50%);
+	background-image: -moz-linear-gradient(to bottom, rgba(255,255,240,255)50%, rgba(255,255,240,0) 50%);
+	background-image: -o-linear-gradient(to bottom, rgba(255,255,240,255)50%, rgba(255,255,240,0) 50%);
+	background-image: -webkit-linear-gradient(to bottom, rgba(255,255,240,255)50%, rgba(255,255,240,0) 50%);
+	border-radius: 50%;
+	color: #875342;
+	display: inline-block;
+	height: 290px;
+	margin-left: 45px;
+	margin-top: -20px;
+	list-style: none;
+	position: absolute;
+	text-align: center;
+	width: 80px;
+	z-index: 200;
+}
+
+.icon-circle li:nth-child(1) {
+	transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+}
+
+.icon-circle li:nth-child(2) {
+	transform: rotate(60deg);
+	-o-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	-webkit-transform: rotate(60deg);
+}
+
+.icon-circle li:nth-child(3) {
+	transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+}
+
+.icon-circle li:nth-child(4) {
+	transform: rotate(120deg);
+	-o-transform: rotate(120deg);
+	-moz-transform: rotate(120deg);
+	-webkit-transform: rotate(120deg);
+}
+
+.icon-circle li:nth-child(5) {
+	transform: rotate(150deg);
+	-o-transform: rotate(150deg);
+	-moz-transform: rotate(150deg);
+	-webkit-transform: rotate(150deg);
+}
+
+.icon-circle li:nth-child(6) {
+	transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+
+.icon-circle li:nth-child(7) {
+	transform: rotate(210deg);
+	-o-transform: rotate(210deg);
+	-moz-transform: rotate(210deg);
+	-webkit-transform: rotate(210deg);
+}
+
+.icon-circle li:nth-child(8) {
+	transform: rotate(240deg);
+	-o-transform: rotate(240deg);
+	-moz-transform: rotate(240deg);
+	-webkit-transform: rotate(240deg);
+}
+
+.icon-circle li:nth-child(9) {
+	transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+}
+
+.icon-circle li:nth-child(10) {
+	transform: rotate(300deg);
+	-o-transform: rotate(300deg);
+	-moz-transform: rotate(300deg);
+	-webkit-transform: rotate(300deg);
+}
+
+.icon-circle li:nth-child(11) {
+	transform: rotate(330deg);
+	-o-transform: rotate(330deg);
+	-moz-transform: rotate(330deg);
+	-webkit-transform: rotate(330deg);
+}
+
+.icon-circle .devicon {
+	font-size: 2.5em;
+}

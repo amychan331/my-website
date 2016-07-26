@@ -8,7 +8,6 @@
 .gallery {
 	background: rgba(255, 255, 255, 0.6);
 	display: inline-block;
-	position: relative;
 	height: 250px;
 	margin: 10px;
 	position: relative;
@@ -60,7 +59,7 @@
 	z-index: 100;
 }
 
-.carousel-control i:hover {
+.carousel-control i:hover, .carousel-control i:active, .carousel-control i:focus {
 	color: #4d4d4d;
 }
 
@@ -153,7 +152,7 @@ aside h2 {
 	display: inline;
 }
 
-aside span, aside .github i {
+aside span, aside .icon i {
 	vertical-align: top;
 }
 
@@ -161,15 +160,116 @@ aside span, aside .github i {
 @-moz-keyframes spin { 100% {-moz-transform: rotate(360deg);} }
 @-webkit-keyframes spin { 100% {-webkit-transform: rotate(360deg);} }
 
-aside a.github {
+aside a.icon:link, aside a.icon:visited {
 	display: inline-block;
 }
 
-aside a.github:active, aside a.github:focus {
+aside a.icon:active, aside a.icon:focus {
 	animation-name: spin;
 	animation-duration: 2s;
 	-moz-animation-duration: 2s;
 	-webkit-animation-duration: 2s;
+}
+
+/* GALLERY ICON CIRCLE
+---------------------------------*/
+/* 
+Code modified from "Code a Spinning Circular Menu With CSS" by Joshua Johnson at https://designshack.net/articles/css/code-a-spinning-circular-menu-with-css/ 
+The circle no longer spins here, since I did not want animation on the About page.
+Instead of have a circular color background for each li's icon and then calculate icon's left(x) and top(y) location on the .icon-circle as the original did,
+I extended the height of each li's background and turn the li into a rectangle, then I changed the background color to gradient.
+I then rotate the rectangle. With the gradient going from color to translucent, the backgrond of the head where the icon is would be colored, 
+while its tail that overlap the icon on the other side would be translucent and not blocking the other icon.
+That way, I don't have to do any calculation for left(x) and top(y) placement if new icons are added.
+*/
+
+/* the id container that holds everything */
+.gallery .circle {
+	display: block;
+	margin: auto;
+	margin-top: 6%;
+	position: relative;;
+	text-align: center;
+	width: 200px;
+}
+
+/* smaller circle that overlaps the colored circle with background color (#FFFFF0) */
+.circle:before {
+	content: " ";
+	background: white;
+	border-radius: 50%;
+	display: block;
+	height: 190px;
+	position: absolute;
+	text-align: center;
+	width: 190px;
+	margin-left: 5.5px;
+	margin-top: 4.75px;
+	z-index: 10;
+}
+
+/* the circle that holds the icons */
+.icon-circle {
+	display: block;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: #666666;
+}
+
+.icon-circle li {
+	background-image: linear-gradient(to bottom, rgba(2255, 255, 255, 1)50%, rgba(255, 255, 255, 0) 50%);
+	background-image: -moz-linear-gradient(to bottom, rgba(255, 255, 255, 1)50%, rgba(255, 255, 255, 0) 50%);
+	background-image: -o-linear-gradient(to bottom, rgba(255, 255, 255, 1)50%, rgba(255, 255, 255, 0) 50%);
+	background-image: -webkit-linear-gradient(to bottom, rgba(255, 255, 255, .1)50%, rgba(255, 255, 255, 0) 50%);
+	border-radius: 50%;
+	bottom: -10%;
+	color: #875342;
+	display: inline-block;
+	height: 235px;
+	right: 30%;
+	list-style: none;
+	position: absolute;
+	text-align: center;
+	width: 85px;
+	z-index: 100;
+}
+
+.icon-circle li:nth-child(1) {
+	transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+}
+
+.icon-circle li:nth-child(2) {
+	transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+}
+
+.icon-circle li:nth-child(3) {
+	transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+
+.icon-circle li:nth-child(4) {
+	transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-webkit-transform: rotate(270sdeg);
+}
+
+.icon-circle .devicon {
+	font-size: 2.5em;
+}
+
+.icon-circle .fa-terminal:before {
+	margin-right: 4px;
 }
 
 /* WordPress: 3.0 - Typography

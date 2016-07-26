@@ -1,13 +1,27 @@
 <?php
 class Content {
 	public function __construct() {
-echo <<< EOD
-	<div id = content>
-		<h2 class="italic center">AMY YUEN YING CHAN'S RESUME</h2>
-		<p class="italic center">Note that my LinkedIn profile is typically more up-to-date. Please feel free to <a href="https://www.linkedin.com/in/amyyychan">make a connection!</a></p><br />
-		<hr></hr>
+		echo "<main>";
+		$this->subheader();
+		$this->getArticle();
+		echo "</main>";
+	}
 
-		<span class="underlined-category">EDUCATION & PROFESSIONAL DEVELOPMENT</span>
+	private function subheader() {
+	echo <<< EOD
+	<div id='subheader'>
+		<h1>Resume of Amy Yuen Ying Chan</h1>
+		<p class="italic">Note that my LinkedIn profile is typically more up-to-date. Please feel free to <a href="https://www.linkedin.com/in/amyyychan">
+make a <i class="fa fa-linkedin-square" aria-hidden="true"></i> connection!</a></p><br />
+	</div>
+	<hr></hr>
+EOD;
+	}
+
+	private function getArticle() {
+	echo <<< EOD
+		<br />
+		<h3 class="underlined">EDUCATION & PROFESSIONAL DEVELOPMENT</h3>
 		<ul class="indent">
 			<li>Certificates in Web Application Programming, 2015. Linux Administration, Expected 2016. </li>
 			<li>City College of San Francisco, 2013 – 2016.</li>
@@ -17,7 +31,7 @@ echo <<< EOD
 		</ul>
 		<br />
 
-		<span class = "underlined-category">SKILLS</span>
+		<h3 class="underlined">SKILLS</h3>
 		<ul class="indent">
 			<li><span class = "bold-title">Programming Language:</span> HTML5 & CSS3, Javascript (including jQuery), MySQL, PHP, Python, Java,  C++, Bash, LAMP stack, learning MEAN stack.</li>
 			<li><span class = "bold-title">Graphic Program:</span> Adobe Creative Suite, (Photoshop, Illustrator, InDesign, Acrobat).</li>
@@ -25,7 +39,7 @@ echo <<< EOD
 		</ul>
 		<br />
 
-		<span class="underlined-category">EXPERIENCES</span>
+		<h3 class="underlined">EXPERIENCES</h3>
 			<p><span class="bold-title">Website Volunteer at Bayview Boom,</span> Jan 16 – Mar 16.
 			<ul class="textul">
 				<li>WordPress: Built a WordPress site that allows member registration.</li>
@@ -49,7 +63,6 @@ echo <<< EOD
 				<li>Detail-oriented: Ensured quality and correct format on client files prior to printing. Assist and troubleshoot on Adobe Creative Suite, Publisher, Word, and Excel format issues.</li>
 			</ul>
 		<br />
-	</div>
 EOD;
 	}
 }

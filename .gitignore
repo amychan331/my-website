@@ -1,1 +1,4 @@
 blog/*
+private/*
+
+!blog/wp-content/themes/*

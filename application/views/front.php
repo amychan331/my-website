@@ -20,7 +20,7 @@
 	<div id="indexContent">
 		<div id='indexArticle'>
 			<header>
-				<div id="banner"><a href="index.php">Craft + Tech</a></div>
+				<div id="banner"><a href="index.html">Craft + Tech</a></div>
 			</header>
 		<?php
 			$content = new Content();

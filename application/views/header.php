@@ -17,15 +17,16 @@
 	<![endif]-->
 </head>
 <body>
-	<header>
-		<div id="banner">
+	<a id="skip-main" href="#content">Skip to main content</a>
+	<header role="banner">
+		<div id="logo">
 			<div class="bevel top"></div>
 			<p class="site-title"><a href="index.html">Craft + Tech</a></p>
 			<div class="bevel bottom"></div>
 		</div>
 		<div id="social-media">
-			<a href="https://twitter.com/CraftPlusTech"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" title="View Amy's Twitter Page"></i></a>
-			<a href="https://www.linkedin.com/in/amyyychan"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true" title="View Amy's LinkedIn Profile"></i></a>
-			<a href="https://github.com/amychan331"><i class="fa fa-github-square fa-2x" aria-hidden="true" title="View Amy's Github Repos"></i></a>
+			<a href="https://twitter.com/CraftPlusTech" aria-label="View Amy's Twitter Page"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+			<a href="https://www.linkedin.com/in/amyyychan" aria-label="View Amy's LinkedIn Profile"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+			<a href="https://github.com/amychan331" aria-label="View Amy's Github Repos"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
 		</div>
 	</header>

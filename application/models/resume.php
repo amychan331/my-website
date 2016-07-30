@@ -1,7 +1,7 @@
 <?php
 class Content {
 	public function __construct() {
-		echo "<main>";
+		echo "<main id='content'>";
 		$this->subheader();
 		$this->getArticle();
 		echo "</main>";
@@ -11,7 +11,7 @@ class Content {
 	echo <<< EOD
 	<div id='subheader'>
 		<h1>Resume of Amy Yuen Ying Chan</h1>
-		<p class="italic">Note that my LinkedIn profile is typically more up-to-date. Please feel free to <a href="https://www.linkedin.com/in/amyyychan">
+		<p class="italic">Note that my LinkedIn profile is typically more up-to-date. Please feel free to <a href="https://www.linkedin.com/in/amyyychan" aria-label="Amy's Linkedin">
 make a <i class="fa fa-linkedin-square" aria-hidden="true"></i> connection!</a></p><br />
 	</div>
 	<hr></hr>

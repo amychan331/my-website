@@ -1,4 +1,4 @@
-<footer>
+<footer role='contentinfo'>
 	<p class='copyright'>
 		&copy <?php echo date("Y");?> Amy Yuen Ying Chan. 
 	</p>

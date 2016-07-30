@@ -1,21 +1,21 @@
 <?php
 class Content {
 	public function __construct() {
-		echo "<main>";
+		echo "<main id='content'>";
 		$this->subheader();
 		$this->getArticle();
 		echo "</main>";
 	}
 
 	private function subheader() {
-		echo "<noscript id='test'>
+		echo "<noscript>
     			<p>Efforts were made so this site remain functional without JavaScript.</p>
     			<p>JS on this page allow you to expand the excerpts into full content. If you don't want to do that, worry not - just click the link to my WordPress account!</p>
 			</noscript>";
 		echo <<< EOD
 		<div id ='subheader'>
 			<h1>Excerpts From 
-			<a class='icon' href='http://www.craftplustech.com/blog/'><i class='fa fa-wordpress fa-2x' aria-hidden='true'></i></a>
+			<a class='icon' href='http://www.craftplustech.com/blog/' arial-label="WordPress logo and Amy's WordPress link"><i class='fa fa-wordpress fa-2x' aria-hidden='true'></i></a>
 			 My WordPress</h1>
 			<p class='italic'>Feel free to read my blog, search via tags, or subscribe either here or at my WordPress blog - everything here is extracted dynamically via a custom WordPress loop, so there's no delays!</p>
 		</div>

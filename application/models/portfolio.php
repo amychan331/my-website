@@ -17,7 +17,7 @@ class Content {
 		$projectsDir = $this->projectsDir; // In order to get this variable when the anonymous function call it with use()
 		$this->projectsList = array_slice( array_filter( scandir($projectsDir), function($dir) use ($projectsDir) { return is_dir("$projectsDir/$dir"); } ), 2); // array_slice removes the "." and ".." that scandir returns
 
-		echo "<main>";
+		echo "<main id='content'>";
 		
 		// Using the list of projects, set up the subnav and article contents
 		foreach($this->projectsList as $project) {
@@ -41,7 +41,7 @@ class Content {
 	}
 
 	private function subheader() {
-		echo "<noscript id='test'>
+		echo "<noscript>
     			<p>Efforts were made so this site remain functional without JavaScript... except for this - it IS a portfolio for a web developer, after all.</p>
     			<p>JS from my site is required for the Github icon to spin when clicked, and jQuery is required to operate the image slider.</p>
 			</noscript>";
@@ -78,7 +78,7 @@ class Content {
 				$this->description .= "<h2>" . $json['title'] . "</h2><br />";
 				$this->description .= "<span>" . $json['desc'] . "</span>";
 					$this->description .= "<span class ='link italic'>View code for " . $json['title'] . " at Github >> </span>";
-				$this->description .= "<a class='icon' href='" . $json['github'] . "'>";
+				$this->description .= "<a class='icon' href='" . $json['github'] . "' aria-label='Project's Github'>";
 					$this->description .= "<i class='fa fa-github-alt fa-2x' aria-hidden='true'></i>";
 				$this->description .= "</a></p>";
 			$this->description .= "</div>";
@@ -97,15 +97,12 @@ class Content {
 
 	private function setGallery($project, $imgList) {
 		// HTML for the galleries
-		$this->slider = "<div id='" . $project . "' class='gallery'>";
-	    	// Left & right controls
+		$this->slider = "<div id='" . $project . "' class='gallery' role='listbox' aria-label='" . $project . " carousel'>";
+	    	// Left control
 			$this->slider .= <<< EOD
 			<div class="carousel-control">
-				<a class= "prev" href="#$project" role="button">
+				<a href="#$project" class="prev" role="button" title="previous"'>
 					<i class="fa fa-chevron-circle-left fa-3x" aria-hidden="true"></i>
-				</a>
-				<a class="next" href="#$project" role="button">
-					<i class="fa fa-chevron-circle-right fa-3x" aria-hidden="true"></i>
 				</a>
 			</div>
 EOD;
@@ -114,29 +111,38 @@ EOD;
 	   			$this->slider .= "<ul>";
 		    		foreach ($imgList as $img) {
 		    			$this->slider .= "
-		    			<li><div class='slide-img'><a href='" . "$this->projectsDir/$project/$img" . "'>
+		    			<li role='option'><div class='slide-img'><a href='" . "$this->projectsDir/$project/$img" . "'>
 		    				<img src='" . "$this->projectsDir/$project/$img" . "' alt='" . substr( $img, 0, (strrpos($img, '.')) ) . "'>
 		    			</a></div></li>";
 		    		}
 			    $this->slider .= "</ul>";
 		    $this->slider .= "</div>";
-		$this->slider .= "</div>";
+
+		    // Right control
+			$this->slider .= <<< EOD
+		    <div class="carousel-control">
+				<a href="#$project" class="next" role="button" title="next">
+					<i class="fa fa-chevron-circle-right fa-3x" aria-hidden="true" tabindex="-1"></i>
+				</a>
+			</div>
+		</div>
+EOD;
 	}
 
 	private function iconCicle($identifier) {
-		$this->circle = "<div class='gallery'><div id='$identifier' ";
+		$this->circle = "<div class='gallery' role='img' aria-label='Circle of icons indicating what language the project used'><div id='$identifier' ";
 		$this->circle .= <<< EOD
 		 class='circle'>
 			<div class='icon-circle'> 
 				<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
 				<ul>
-					<li class="fa-stack fa-lg">
+					<li class="fa-stack fa-lg" role='img' aria-label='terminal for bash scripting'>
 						<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
 						<i class="fa fa-terminal fa-stack-1x fa-inverse" aria-hidden="true"></i>
 					</li>
-					<li><i class="devicon devicon-python-plain aria-hidden="true""></i></li>
-					<li><i class="fa fa-wordpress fa-3x" aria-hidden="true"></i></li>
-					<li><i class="devicon devicon-php-plain aria-hidden="true""></i></li>
+					<li><i class="devicon devicon-python-plain aria-hidden="true" title="python"></i></li>
+					<li><i class="fa fa-wordpress fa-3x" aria-hidden="true" title="wordpress"></i></li>
+					<li><i class="devicon devicon-php-plain aria-hidden="true" title="php"></i></li>
 				</ul>
 			</div>
 		</div></div>

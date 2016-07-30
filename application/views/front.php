@@ -19,8 +19,8 @@
 <body>
 	<div id="indexContent">
 		<div id='indexArticle'>
-			<header>
-				<div id="banner"><a href="index.html">Craft + Tech</a></div>
+			<header role="banner">
+				<div id="logo"><a href="index.html">Craft + Tech</a></div>
 			</header>
 		<?php
 			$content = new Content();

@@ -90,13 +90,32 @@ noscript p, #noJquery {
 
 /* HEADER
 ---------------------------------*/
+a#skip-main {
+	left: -999px;
+	overflow: hidden;
+	position: absolute;
+}
+
+a#skip-main:focus, a#skip-main:active {
+	background-color: rgba(255, 255, 255, 0.6);
+	display: block;
+	clear: both;
+	color: #D45328;
+	left: auto;
+	position: relative;
+	text-decoration: underline dotted;
+	top: auto;
+	overflow: auto;
+	width: 20%;
+}
+
 header {
 	margin: 10px;
 	width: 100%;
 	clear: both;
 	font-family: "Optima";
 }
-#banner {
+#logo {
 	clear: both;
 	float: left;
 	font-size: 3em;
@@ -105,7 +124,7 @@ header {
 	margin-left: -15px;
 }
 
-#banner .site-title {
+#logo .site-title {
 	background-color: rgba(255, 255, 255, 0.6);
     border-top: 0;
     border-bottom: 0;
@@ -118,8 +137,8 @@ header {
     width: 100%;
 }
 
-/* brevel, top, & bottom used to create the translucent background of banner */
-#banner .bevel {
+/* brevel, top, & bottom used to create the translucent background of logo */
+#logo .bevel {
 	border-color: rgba(255, 255, 255, 0.6);
 	border-style: solid;
 	border-width: 25px;
@@ -128,22 +147,22 @@ header {
 	width: 100%;
 }
 
-#banner .top {
+#logo .top {
 	border-top: 0;
 	border-right-color: transparent;
 }
 
-#banner .bottom {
+#logo .bottom {
 	border-bottom: 0;
 	border-right-color: transparent;
 }
 
-#banner a:link, #banner a:visited {
+#logo a:link, #logo a:visited {
 	color: #D45328;
 	text-decoration: none;
 }
 
-#banner a:hover, #banner a:active, #banner a:focus {
+#logo a:hover, #logo a:active, #logo a:focus {
 	color: #875342;
 	font-weight: bold;
 	text-decoration: underline dashed;
@@ -174,22 +193,23 @@ header {
 /* NAVIGATION
 ---------------------------------*/
 nav {
+	clear: both;
+	height: auto;
+	position: relative;
 	width: 90%;
 }
 
-nav ul {
-	clear: both;
+nav #main-menu{
 	opacity: 0.8;
 	filter: alpha(opacity=80);
 	float: right;
-	margin: 0 0 -15px 20px;
-	position: relative;
-	overflow: auto;
+	margin: 10px 0 -10px 15px;
+	overflow: hidden;
 	width: 580px;
 	z-index: 10;
 }
 
-nav li {
+nav a {
 	background: #873F27;
 	box-shadow: 6px 0 10px -4px black;
 	-o-box-shadow: 6px 0 10px -4px black;
@@ -206,25 +226,22 @@ nav li {
 	width: 100px;
 }
 
-nav li a {
+nav a span {
 	display: block;
 	height: 100%;
-	width: 100%;
+	width: 100px;
 }
 
-nav ul a:link, nav ul a:visited {
+nav a:link, nav a:visited {
 	color: white;
 	text-decoration: none;
 }
 
-nav ul a:hover, nav ul a:active, nav ul a:focus {
+nav a:hover, nav a:active, nav a:focus {
+	background: #FFFFF0;
 	color: #873F27;
 	font-weight: bold;
 	text-decoration: none;
-}
-
-nav ul li:hover, nav ul li:active, nav ul li:focus {
-	background: #FFFFF0;
 }
 
 /* SUBHEADER/SUBNAV

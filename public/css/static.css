@@ -53,11 +53,11 @@ form input, form textarea {
 }
 
 form input:active, form textarea:active, form input:focus, form textarea:focus {
-	border: 2px groove #D45328;
+	border: 2px groove #DD3300;
 }
 
 form input[name="submit"] {
-	color: #D45328;
+	color: #DD3300;
 	float: right;
 	margin-top: 8px;
 	margin-right: 23%;

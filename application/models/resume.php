@@ -29,7 +29,7 @@ EOD;
 			<li>Bachelor of Architecture, California Polytechnic State University Jun 2011.</li>
 			<li>Dean’s List Fall 2009.</li>
 		</ul>
-		<br />
+		<br>
 
 		<h3 class="underlined">SKILLS</h3>
 		<ul class="indent">
@@ -37,7 +37,7 @@ EOD;
 			<li><span class = "bold-title">Graphic Program:</span> Adobe Creative Suite, (Photoshop, Illustrator, InDesign, Acrobat).</li>
 			<li><span class = "bold-title">Language:</span>Cantonese Chinese (Native Fluency).</li>
 		</ul>
-		<br />
+		<br>
 
 		<h3 class="underlined">EXPERIENCES</h3>
 			<p><span class="bold-title">Website Volunteer at Bayview Boom,</span> Jan 16 – Mar 16.
@@ -62,7 +62,7 @@ EOD;
 				<li>Teamwork: Ensured the accuracy of final print production by maintaining constant communication with multiple departments, team members, and clients via in-person contact, email, fax, and multi-line phone communication. </li>
 				<li>Detail-oriented: Ensured quality and correct format on client files prior to printing. Assist and troubleshoot on Adobe Creative Suite, Publisher, Word, and Excel format issues.</li>
 			</ul>
-		<br />
+		<br>
 EOD;
 	}
 }

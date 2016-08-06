@@ -102,7 +102,7 @@ class Content {
 	    	// Left control
 			$this->slider .= <<< EOD
 			<div class="carousel-control">
-				<a href="#$nospaceproj" class="prev" role="button" title="previous">
+				<a href="#$nospaceproj" class="prev" role="button" aria-label="previous">
 					<i class="fa fa-chevron-circle-left fa-3x" aria-hidden="true"></i>
 				</a>
 			</div>
@@ -122,7 +122,7 @@ EOD;
 		    // Right control
 			$this->slider .= <<< EOD
 		    <div class="carousel-control">
-				<a href="#$project" class="next" role="button" title="next">
+				<a href="#$project" class="next" role="button" aria-label="next">
 					<i class="fa fa-chevron-circle-right fa-3x" aria-hidden="true" tabindex="-1"></i>
 				</a>
 			</div>

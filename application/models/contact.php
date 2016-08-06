@@ -115,10 +115,10 @@ EOD;
 		$this->aside = "<aside id='social'><h2>Find me on Social Media:</h2>";
 		$this->aside .= "Not really into emailing? Grab me at one of the social media sites!";
 		$this->aside .= "<hr>";
-		$this->aside .= "<a href='https://twitter.com/CraftPlusTech' aria-labelledby='Twitter Page of Amy'><i class='fa fa-twitter fa-1x' aria-hidden='true'></i> My Twitter Page</a><br>";
-		$this->aside .= "<a href='https://www.linkedin.com/in/amyyychan' aria-labelledby='LinkedIn Profile of Amy'><i class='fa fa-linkedin fa-1x' aria-hidden='true'></i> My LinkedIn Profile</a><br>";
-		$this->aside .= "<a href='https://github.com/amychan331' aria-labelledby='View Github Repos of Amy'><i class='fa fa-github fa-1x' aria-hidden='true'></i> My GithuHub Repos</a><br>";
-		$this->aside .= "<a href='http://www.craftplustech.com/blog/' aria-labelledby='View WordPress Post of Amy'><i class='fa fa-wordpress fa-1x' aria-hidden='true'></i> My WordPress Blog</a><br>";
+		$this->aside .= "<a href='https://twitter.com/CraftPlusTech' aria-label='Twitter Page of Amy'><i class='fa fa-twitter fa-1x' aria-hidden='true'></i> My Twitter Page</a><br>";
+		$this->aside .= "<a href='https://www.linkedin.com/in/amyyychan' aria-label='LinkedIn Profile of Amy'><i class='fa fa-linkedin fa-1x' aria-hidden='true'></i> My LinkedIn Profile</a><br>";
+		$this->aside .= "<a href='https://github.com/amychan331' aria-label='View Github Repos of Amy'><i class='fa fa-github fa-1x' aria-hidden='true'></i> My GithuHub Repos</a><br>";
+		$this->aside .= "<a href='http://www.craftplustech.com/blog/' aria-label='View WordPress Post of Amy'><i class='fa fa-wordpress fa-1x' aria-hidden='true'></i> My WordPress Blog</a><br>";
 		$this->aside .= "</aside>";
 	}
 }

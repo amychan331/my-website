@@ -72,15 +72,15 @@ $this->article .= <<< EOD
 				<ul>
 					<li><i class="fa fa-html5 fa-3x" aria-hidden="true"></i></li>
 					<li><i class="fa fa-css3 fa-3x" aria-hidden="true"></i></li>
-					<li><i class="devicon devicon-javascript-plain aria-hidden="true"></i></li>
-					<li><i class="devicon devicon-jquery-plain aria-hidden="true"></i></li>
+					<li><i class="devicon devicon-javascript-plain" aria-hidden="true"></i></li>
+					<li><i class="devicon devicon-jquery-plain" aria-hidden="true"></i></li>
 					<li class="fa-stack fa-lg">
 						<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
 						<i class="fa fa-terminal fa-stack-1x fa-inverse" aria-hidden="true"></i>
 					</li>
 					<li><i class="fa fa-wordpress fa-3x" aria-hidden="true"></i></li>
 					<li><i class="fa fa-font-awesome fa-3x" aria-hidden="true"></i></li>
-					<li><i class="devicon devicon-gimp-plain aria-hidden="true"></i></li>
+					<li><i class="devicon devicon-gimp-plain" aria-hidden="true"></i></li>
 					<li><i class="fa fa-github fa-3x" aria-hidden="true"></i></li>
 					<li><i class="devicon devicon-vim-plain" aria-hidden="true"></i></li>
 					<li><i class="fa fa-book fa-3x" aria-hidden="true"></i></li>

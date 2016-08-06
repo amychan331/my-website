@@ -55,12 +55,11 @@ $(document).ready(function() {
 		if ( $('#lightbox').is(':visible') ) {
 			if (e.key == "Tab" || e.keyCode == 9) {
 				if ( document.activeElement.tagName == 'BUTTON' ) {
-					console.log('close to img');
+					//Clean out previous focus via blur, or the next focus may not work.
 					$('#lightcontainer #close').blur(function() {
 						$('#lightcontainer img').focus();
 					});
 				} else {
-					console.log('img to close');
 					$('#lightcontainer img').blur(function() {
 						$('#lightcontainer #close').focus();
 					});

@@ -15,11 +15,11 @@ class Content {
 		echo <<< EOD
 		<div id ='subheader'>
 			<h1>Excerpts From 
-			<a class='icon' href='http://www.craftplustech.com/blog/' arial-label="WordPress logo and Amy's WordPress link"><i class='fa fa-wordpress fa-2x' aria-hidden='true'></i></a>
+			<a class='icon' href='http://www.craftplustech.com/blog/' aria-label="WordPress logo and Amy's WordPress link"><i class='fa fa-wordpress fa-2x' aria-hidden='true'></i></a>
 			 My WordPress</h1>
 			<p class='italic'>Feel free to read my blog, search via tags, or subscribe either here or at my WordPress blog - everything here is extracted dynamically via a custom WordPress loop, so there's no delays!</p>
 		</div>
-		<hr></hr>
+		<hr>
 EOD;
 	}
 
@@ -62,7 +62,7 @@ EOD;
 				echo "<p class='center postmetadata' style='display:none;'>";
 					comments_popup_link('No Comments', '1 Comment', '% Comments');
 				echo "</p>";
-				echo "<hr></hr>";
+				echo "<hr>";
 			endwhile;
 		} else {
 			echo "No posts found.";

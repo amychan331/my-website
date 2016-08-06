@@ -6,8 +6,8 @@
 <head>
 	<meta charset = "utf-8">
 	<title>Craft + Tech</title>
-	<meta home="description" content="Record my exploration in craft and technology">
-	<meta home="author" content="Amy Yuen Ying Chan">
+	<meta name="description" content="Record my exploration in craft and technology">
+	<meta name="author" content="Amy Yuen Ying Chan">
 	<link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="public/css/<?php echo $template ?>.css">
 	<link rel="stylesheet" type="text/css" href="public/css/font-awesome/css/font-awesome.min.css">
@@ -24,7 +24,7 @@
 			</header>
 		<?php
 			$content = new Content();
-			echo "<hr></hr>";
+			echo "<hr>";
 			echo "<div id='indexNav'>";
 				require_once('application/views/menu.php'); 
 			echo "</div>";

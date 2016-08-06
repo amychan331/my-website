@@ -2,8 +2,10 @@
 	For pages that rarely changes and usually contain a little number of articles.
 	Example: About, Resume, Contact   
 ---------------------------------*/
-article section span {
+article section div {
+	display: inline;
 	position: relative;
+	width: auto;
 }
 
 article section br {

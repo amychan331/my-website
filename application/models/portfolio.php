@@ -24,12 +24,12 @@ class Content {
 			// Seperate out the $project string, first 3 character for order, rest the actual project name.
 			$order = substr($project, 0, 3);
 			$project = substr($project, 3);
-			$this->projectsNav[] = "<a href='#$project'>$project</a>";
+			$this->projectsNav[] = "<a href='#" . preg_replace('/\s+/', '', $project) . "'>$project</a>";
 			$this->portfolio .= $this->getArticle($order, $project);
 		}
 
 		//The last row, where smaller code snippets without screenshots are display
-		$this->portfolio .= "<hr></hr>";
+		$this->portfolio .= "<hr>";
 		$this->portfolio .= $this->iconCicle("snippets"); 
 		$this->portfolio .= $this->getDesc("snippets");
 		$this->projectsNav[] = "<a href='#snippets'>snippets</a>";
@@ -57,8 +57,8 @@ class Content {
 	}
 
 	private function setArticle($order, $project) {
-		$this->article = "<hr></hr>";
-		$this->article .= "<article>";
+		$this->article = "<hr>";
+		$this->article .= "<article id='" . preg_replace('/\s+/', '', $project) . "'>";
 			$this->article .= $this->getGallery($order, $project);
 			$this->article .= $this->getDesc($project);
 		$this->article .= "</article>";
@@ -78,7 +78,7 @@ class Content {
 				$this->description .= "<h2>" . $json['title'] . "</h2><br />";
 				$this->description .= "<span>" . $json['desc'] . "</span>";
 					$this->description .= "<span class ='link italic'>View code for " . $json['title'] . " at Github >> </span>";
-				$this->description .= "<a class='icon' href='" . $json['github'] . "' aria-label='Project's Github'>";
+				$this->description .= "<a class='icon' href='" . $json['github'] . "' aria-label='Github repo of project'>";
 					$this->description .= "<i class='fa fa-github-alt fa-2x' aria-hidden='true'></i>";
 				$this->description .= "</a></p>";
 			$this->description .= "</div>";
@@ -97,11 +97,12 @@ class Content {
 
 	private function setGallery($project, $imgList) {
 		// HTML for the galleries
-		$this->slider = "<div id='" . $project . "' class='gallery' role='listbox' aria-label='" . $project . " carousel'>";
+		$nospaceproj = preg_replace('/\s+/', '', $project);
+		$this->slider = "<div id='$nospaceproj' class='gallery' role='listbox' aria-label='" . $project . " carousel'>";
 	    	// Left control
 			$this->slider .= <<< EOD
 			<div class="carousel-control">
-				<a href="#$project" class="prev" role="button" title="previous"'>
+				<a href="#$nospaceproj" class="prev" role="button" title="previous">
 					<i class="fa fa-chevron-circle-left fa-3x" aria-hidden="true"></i>
 				</a>
 			</div>
@@ -130,7 +131,7 @@ EOD;
 	}
 
 	private function iconCicle($identifier) {
-		$this->circle = "<div class='gallery' role='img' aria-label='Circle of icons indicating what language the project used'><div id='$identifier' ";
+		$this->circle = "<div class='gallery' role='group' aria-label='Circle of icons indicating what language the project used'><div id='$identifier' ";
 		$this->circle .= <<< EOD
 		 class='circle'>
 			<div class='icon-circle'> 

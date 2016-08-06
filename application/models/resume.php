@@ -14,7 +14,7 @@ class Content {
 		<p class="italic">Note that my LinkedIn profile is typically more up-to-date. Please feel free to <a href="https://www.linkedin.com/in/amyyychan" aria-label="Amy's Linkedin">
 make a <i class="fa fa-linkedin-square" aria-hidden="true"></i> connection!</a></p><br />
 	</div>
-	<hr></hr>
+	<hr>
 EOD;
 	}
 

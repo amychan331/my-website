@@ -21,7 +21,7 @@ class Content {
 	echo <<< EOD
 	<div id='subheader'>
 		<h1>Contact Me</h1>
-	<hr></hr>
+	<hr>
 EOD;
 	}
 
@@ -95,12 +95,12 @@ EOD;
 	private function setForm() {
 		$this->form = "<form id='contact' method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>";
 			$this->form .= "<h2>Message Me!</h2>";
-			$this->form .= "<label for='name'>What's your name? </label><input type='text' name='name' required /><br>";
+			$this->form .= "<label for='name'>What's your name? </label><input type='text' name='name' id='name' required /><br>";
 			if ( isset($this->error['name']) ) { $this->form .= "<span class='error'>* " . $this->error['name'] . "</span><br>"; };
-			$this->form .= "<label for='email'>Your email address? </label><input type='email' name='email' required /><br>";
+			$this->form .= "<label for='email'>Your email address? </label><input type='email' name='email' id='email' required /><br>";
 			if ( isset($this->error['email']) ) { $this->form .= "<span class='error'>* " . $this->error['email'] . "</span><br>"; };
-			$this->form .= "<label for='subject'>A subject line? </label><input type='text' name='subject' required /><br>";
-			$this->form .= "<label for='message'>What is you message? </label><textarea name='message' cols='30' rows='8' required /></textarea><br>";
+			$this->form .= "<label for='subject'>A subject line? </label><input type='text' name='subject' id='subject' required /><br>";
+			$this->form .= "<label for='message'>What is you message? </label><textarea name='message' id='message' cols='30' rows='8' required></textarea><br>";
 			$this->form .= "<p class='spam-check' style='display:none;'>Leave this empty: <input type='text' name='url' /></p>";
 			$this->form .= "<input type='submit' name='submit' value='Contact Me!'>";
 		$this->form .= "</form>";
@@ -114,11 +114,11 @@ EOD;
 	private function setSocial() {
 		$this->aside = "<aside id='social'><h2>Find me on Social Media:</h2>";
 		$this->aside .= "Not really into emailing? Grab me at one of the social media sites!";
-		$this->aside .= "<hr></hr>";
-		$this->aside .= "<a href='https://twitter.com/CraftPlusTech' aria-labelledby='Amy\'s Twitter Page'><i class='fa fa-twitter fa-1x' aria-hidden='true'></i> My Twitter Page</a><br>";
-		$this->aside .= "<a href='https://www.linkedin.com/in/amyyychan' aria-labelledby='Amy'\s LinkedIn Profile'><i class='fa fa-linkedin fa-1x' aria-hidden='true'></i> My LinkedIn Profile</a><br>";
-		$this->aside .= "<a href='https://github.com/amychan331' aria-labelledby='View Amy\'s Github Repos'><i class='fa fa-github fa-1x' aria-hidden='true'></i> My GithuHub Repos</a><br>";
-		$this->aside .= "<a href='http://www.craftplustech.com/blog/' aria-labelledby='View Amy\'s WordPress Post'><i class='fa fa-wordpress fa-1x' aria-hidden='true'></i> My WordPress Blog</a><br>";
+		$this->aside .= "<hr>";
+		$this->aside .= "<a href='https://twitter.com/CraftPlusTech' aria-labelledby='Twitter Page of Amy'><i class='fa fa-twitter fa-1x' aria-hidden='true'></i> My Twitter Page</a><br>";
+		$this->aside .= "<a href='https://www.linkedin.com/in/amyyychan' aria-labelledby='LinkedIn Profile of Amy'><i class='fa fa-linkedin fa-1x' aria-hidden='true'></i> My LinkedIn Profile</a><br>";
+		$this->aside .= "<a href='https://github.com/amychan331' aria-labelledby='View Github Repos of Amy'><i class='fa fa-github fa-1x' aria-hidden='true'></i> My GithuHub Repos</a><br>";
+		$this->aside .= "<a href='http://www.craftplustech.com/blog/' aria-labelledby='View WordPress Post of Amy'><i class='fa fa-wordpress fa-1x' aria-hidden='true'></i> My WordPress Blog</a><br>";
 		$this->aside .= "</aside>";
 	}
 }

@@ -359,19 +359,22 @@ footer {
 
 /* MEDIA QUERIES
 ---------------------------------*/
-/* Smartphone (portrait and landscape) */
+/* Smartphone and tablet (portrait and landscape) */
 @media only screen and (max-width: 480px) {
 	header {
 		width: 70%;
 	}
+	a#navicon {
+		padding: 2px 4px;
+	}
 	a#navicon i {
 		font-size: 1.5em;
 	}
-	nav a, a#navicon {
-		font-size: 1em;
+	nav a {
+		font-size: 1.5em;
 		height: 1.5em;
-		padding: 2px 6px;
-	}	
+		padding: 0;
+	}
 }
 
 /* Tablets (portrait and landscape) */
@@ -386,7 +389,7 @@ footer {
 		font-size: 1.5em;
 		height: 2em;
 		padding: 6px 8px;
-	}	
+	}
 }
 /* Smartphones and tablets (portrait and landscape) */
 @media only screen and (max-width: 768px) {
@@ -434,6 +437,7 @@ footer {
 		position: fixed;
 		top: 0;
 		right: 0;
+		overflow: auto;
 		width: auto;
 		z-index: 300;
 	}	
@@ -450,7 +454,6 @@ footer {
 	}	
 
 	nav a {
-		font-size: 1.5em;
 		margin: auto;
 		width: 100%;
 	}	
@@ -469,7 +472,6 @@ footer {
 		visibility: visible;
 		width: auto;
 	}
-
 	/* Main */
 	#container {
 		width: 95%;

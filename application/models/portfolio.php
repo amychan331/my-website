@@ -29,9 +29,10 @@ class Content {
 		}
 
 		//The last row, where smaller code snippets without screenshots are display
-		$this->portfolio .= "<hr>";
+		$this->portfolio .= "<hr><article id='snippets'>";
 		$this->portfolio .= $this->iconCicle("snippets"); 
 		$this->portfolio .= $this->getDesc("snippets");
+		$this->portfolio .= "</article>";
 		$this->projectsNav[] = "<a href='#snippets'>snippets</a>";
 
 		// Outpet the subheader and article contents.

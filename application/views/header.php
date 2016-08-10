@@ -8,6 +8,7 @@
 	<title>Craft + Tech</title>
 	<meta name="description" content="My web portfolio that records my exploration in craft and technology">
 	<meta name="author" content="Amy Yuen Ying Chan">
+	<meta name="viewport" content="initial-scale=1.0, width=deivce-width">
 	<link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="public/css/<?php echo $template ?>.css">
 	<link rel="stylesheet" type="text/css" href="public/css/font-awesome/css/font-awesome.min.css">

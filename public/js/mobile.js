@@ -1,0 +1,14 @@
+function toggleNav() {
+	var navitem = document.getElementById("main-menu");
+	if (navitem.style.display != 'block') {
+		//Show menu
+		navitem.setAttribute('style', 'display: block; visibility: visible');
+		document.getElementById('primary-menu').setAttribute('style', 'width: 100%');
+		document.getElementById("navicon").setAttribute('style', 'padding: 4px 0; font-size: 1.5em; width: 100%;');
+	} else {
+		//Hide menu
+		navitem.setAttribute('style', 'display: none; visibility: hidden');
+		document.getElementById('primary-menu').setAttribute('style', 'width: auto');
+		document.getElementById("navicon").setAttribute('style', 'padding: 4px 8px; font-size: 1em; width: auto;');
+	}
+}

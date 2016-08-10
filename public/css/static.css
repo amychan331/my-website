@@ -223,3 +223,60 @@ That way, I don't have to do any calculation for left(x) and top(y) placement if
 .icon-circle .devicon {
 	font-size: 2.5em;
 }
+
+/* Mobile
+---------------------------------*/
+/* For icon circle in About page, "right" is set separately for smartphone and tablet
+	because the circle conflicts with the background image in the smartphone setting. */
+/* Smartphones (portrait and landscape) */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	#site #circle {
+		right: 5%;
+	}
+}
+
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+	#site #circle {
+		right: 10%;
+	}
+}
+
+/* Smartphones and tablets (portrait and landscape) */
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+	/* About */
+	#site #circle {
+		clear: both;
+	}
+	#site h2 {
+		clear: both;
+		display: block;
+	}
+	/* Contact */
+	form#contact {
+		clear: both;
+		float: none;
+		margin: auto;
+		width: 100%;
+	}
+	form#contact input, form#contact textarea {
+		font-size: 1.5em;
+		width: 90%;
+	}
+	form#contact input[name="submit"] {
+		float: none;
+		font-family: Optima;
+		margin: 0;
+	}
+	aside#social {
+		border: 2px dashed brown;
+		clear: both;
+		float: left;
+		margin: 12px 0;
+		padding: 12px;
+		width: 85%;
+	}
+	aside#social h2 {
+		margin: .5em auto;
+	}
+}

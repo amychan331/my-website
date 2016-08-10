@@ -3,6 +3,7 @@
 		&copy; <?php echo date("Y");?> Amy Yuen Ying Chan. 
 	</p>
 </footer>
+<script src='public/js/mobile.js'></script>
 <?php
 	if ( isset($portfolio) ) { // originally flag at the controller
 		echo "<script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>";

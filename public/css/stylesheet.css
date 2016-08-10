@@ -375,7 +375,7 @@ footer {
 }
 
 /* Tablets (portrait and landscape) */
-@media only screen and (min-width: 480px) and (max-width: 768px) {
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 	header {
 		width: 80%;
 	}
@@ -489,7 +489,7 @@ footer {
 }
 
 /* Laptop */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
 	/* Fix for when nav tab have the wrong width when browser is stretch from mobile size to laptop size */
 	nav {
 		width: 90%

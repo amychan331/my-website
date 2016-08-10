@@ -85,7 +85,6 @@ noscript p, #noJquery {
   width: 100%;
   position: relative;
   clear: both;
-  z-index: 50000;
 }
 
 /* HEADER
@@ -435,8 +434,6 @@ footer {
 
 	nav a {
 		font-size: 1.5em;
-		min-height: 2em;
-		max-height: 15%;
 		margin: auto;
 		width: 100%;
 	}	

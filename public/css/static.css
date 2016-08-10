@@ -95,9 +95,13 @@ That way, I don't have to do any calculation for left(x) and top(y) placement if
 /* the id container that holds everything */
 #circle {
 	display: block;
+	float: none;
+	height: 0;
+	padding-bottom: 275px;
 	position: relative;
-	margin: 0 25px 25px 25px;
-	width: 250px;
+	margin: 25px auto;
+	text-align: center;
+	width: 300px;
 }
 
 /* smaller circle that overlaps the colored circle with background color (#FFFFF0) */
@@ -106,23 +110,26 @@ That way, I don't have to do any calculation for left(x) and top(y) placement if
 	background: #FFFFF0;
 	border-radius: 50%;
 	display: block;
-	height: 245px;
+	height: 0;
+	padding-bottom: 95%;
 	position: absolute;
 	text-align: center;
-	width: 245px;
-	margin-left: 2px;
-	margin-top: 18.5px;
+	width: 95%;
+	margin-left: 2.5%;
+	margin-top: 2.5%;
 	z-index: 10;
 }
 
 /* the circle that holds the icons */
 .icon-circle {
-	display: block;
-	position: relative;
-	width: 250px;
-	height: 250px;
-	border-radius: 50%;
 	background: #666666;
+	border-radius: 50%;
+	display: block;
+	height: 0;
+	padding-bottom: 100%;
+	position: absolute;
+	text-align: center;
+	width: 100%;
 }
 
 .icon-circle li {
@@ -133,14 +140,13 @@ That way, I don't have to do any calculation for left(x) and top(y) placement if
 	border-radius: 50%;
 	color: #875342;
 	display: inline-block;
-	height: 290px;
-	margin-left: 45px;
-	margin-top: -20px;
+	height: 110%;
 	list-style: none;
 	position: absolute;
-	text-align: center;
-	width: 80px;
-	z-index: 200;
+	right: 35%;
+	top: -5%;
+	width: 30%;
+	z-index: 100;
 }
 
 .icon-circle li:nth-child(1) {
@@ -226,28 +232,18 @@ That way, I don't have to do any calculation for left(x) and top(y) placement if
 
 /* Mobile
 ---------------------------------*/
-/* For icon circle in About page, "right" is set separately for smartphone and tablet
-	because the circle conflicts with the background image in the smartphone setting. */
-/* Smartphones (portrait and landscape) */
 @media only screen and (max-width: 480px) {
+	/* About */
 	#site #circle {
-		right: 5%;
-	}
-}
-
-/* Tablets (portrait and landscape) */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-	#site #circle {
-		right: 10%;
+		clear: both;
+		margin: 6% auto;
+		padding-bottom: 75%;
+		width: 75%;
 	}
 }
 
 /* Smartphones and tablets (portrait and landscape) */
 @media only screen and (max-width: 768px) {
-	/* About */
-	#site #circle {
-		clear: both;
-	}
 	#site h2 {
 		clear: both;
 		display: block;

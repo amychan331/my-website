@@ -229,7 +229,7 @@ That way, I don't have to do any calculation for left(x) and top(y) placement if
 /* For icon circle in About page, "right" is set separately for smartphone and tablet
 	because the circle conflicts with the background image in the smartphone setting. */
 /* Smartphones (portrait and landscape) */
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
 	#site #circle {
 		right: 5%;
 	}
@@ -243,7 +243,7 @@ That way, I don't have to do any calculation for left(x) and top(y) placement if
 }
 
 /* Smartphones and tablets (portrait and landscape) */
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 	/* About */
 	#site #circle {
 		clear: both;

@@ -140,12 +140,12 @@ That way, I don't have to do any calculation for left(x) and top(y) placement if
 	border-radius: 50%;
 	color: #875342;
 	display: inline-block;
-	height: 110%;
+	height: 115%;
 	list-style: none;
 	position: absolute;
-	right: 35%;
-	top: -5%;
-	width: 30%;
+	right: 33%;
+	top: -8%;
+	width: 31%;
 	z-index: 100;
 }
 
@@ -232,16 +232,17 @@ That way, I don't have to do any calculation for left(x) and top(y) placement if
 
 /* Mobile
 ---------------------------------*/
+/* Smartphone (portrait) */
 @media only screen and (max-width: 480px) {
 	/* About */
 	#site #circle {
 		clear: both;
+		font-size: .75em;
 		margin: 6% auto;
 		padding-bottom: 75%;
 		width: 75%;
 	}
 }
-
 /* Smartphones and tablets (portrait and landscape) */
 @media only screen and (max-width: 768px) {
 	#site h2 {

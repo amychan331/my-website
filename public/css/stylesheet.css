@@ -359,17 +359,34 @@ footer {
 
 /* MEDIA QUERIES
 ---------------------------------*/
+/* Smartphone (portrait and landscape) */
 @media only screen and (max-width: 480px) {
 	header {
 		width: 70%;
 	}
+	a#navicon i {
+		font-size: 1.5em;
+	}
+	nav a, a#navicon {
+		font-size: 1em;
+		height: 1.5em;
+		padding: 2px 6px;
+	}	
 }
 
 /* Tablets (portrait and landscape) */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media only screen and (min-width: 480px) and (max-width: 768px) {
 	header {
 		width: 80%;
 	}
+	a#navicon i {
+		font-size: 2em;
+	}
+	nav a {
+		font-size: 1.5em;
+		height: 2em;
+		padding: 6px 8px;
+	}	
 }
 /* Smartphones and tablets (portrait and landscape) */
 @media only screen and (max-width: 768px) {
@@ -440,17 +457,14 @@ footer {
 
 	nav a span {
 		display: inline-block;
-		padding-top: .5em;
 		width: 100%;
 	}
 
 	a#navicon {
 		clear: none;
 		display: inline-block;
-		font-size: 1em;
 		opacity: 0.8;
 		filter: alpha(opacity=80);
-		padding: 8px 8px;
 		top: 0;
 		visibility: visible;
 		width: auto;
@@ -472,4 +486,12 @@ footer {
 		margin: auto;
 		text-align: center;
 	}
+}
+
+/* Laptop */
+@media only screen and (min-width: 768px) {
+	/* Fix for when nav tab have the wrong width when browser is stretch from mobile size to laptop size */
+	nav {
+		width: 90%
+	}	
 }

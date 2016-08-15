@@ -13,9 +13,9 @@ class Content {
 		echo <<< EOD
 		<div id ='subheader'>
 			<h1>About</h1>
-			<div id='subNav'>
-				<a href='#amy'> Amy</a> •
-				<a href='#site'> Site</a>
+			<div id='subNav' role="navigation" aria-label="Internal Menu" >
+				<a href='#amy' title='Skip to About Amy'> Amy</a> •
+				<a href='#site' title='Skip to About Site'> Site</a>
 			</div>
 		</div>
 EOD;
@@ -66,7 +66,7 @@ EOD;
 $this->article .= <<< EOD
 	<hr>
 	<article id='site'>
-		<aside id='circle' class='right' role='group' aria-label='Logos of programming languages used connected visually by circular background images'>
+		<aside id='circle' class='right' role='img' aria-label='Icons of programming language used'>
 			<div class='icon-circle'> 
 				<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
 				<ul>
@@ -102,7 +102,6 @@ $this->article .= <<< EOD
 			</div><br><div>
 				<h3>Front-end</h3>
 				HTML5, CSS3, Javascript with jQuery and Ajax. I tried to utilize the semantic tags and header so it would be accessibility-friendly - 
-				I found the book "Adaptive Web Design" very useful for ideas. The technicality I left to Google.
 				Most my JS and CSS animation are actually kept to the Portfolio page. Ajax is used in the Blog page only.
 				Even if JS is turn off, most of the site is still fully functional. Noscript tag is used to alert user which features are inaccessible without JS.
 				There are also JS to detect if jQuery library was blocked but not JavaScript for some reason. 
@@ -124,7 +123,7 @@ $this->article .= <<< EOD
 				since I know NoScript blocks web font.
 			</div><br><div>
 				<h3>Version Control</h3>
-				Github. Thank you for keeping track of my codes during the reconstruction of my site!
+				I uploaded all my progress using Git onto Github. Git and Github, thank you for keeping track of my codes during the reconstruction of my site!
 			</div><br><div>
 				<h3>Platform</h3>
 				A combination of Vim and Sumblime Text on my much-loved Macbook Pro.

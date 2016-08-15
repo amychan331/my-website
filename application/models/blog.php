@@ -15,7 +15,7 @@ class Content {
 		echo <<< EOD
 		<div id ='subheader'>
 			<h1>Excerpts From 
-			<a class='icon' href='http://www.craftplustech.com/blog/' aria-label="WordPress logo and Amy's WordPress link"><i class='fa fa-wordpress fa-2x' aria-hidden='true'></i></a>
+			<a class='icon' href='http://www.craftplustech.com/blog/' aria-label="Amy's WordPress link"><i class='fa fa-wordpress fa-2x' aria-hidden='true'></i></a>
 			 My WordPress</h1>
 			<p class='italic'>Feel free to read my blog, search via tags, or subscribe either here or at my WordPress blog - everything here is extracted dynamically via a custom WordPress loop, so there's no delays!</p>
 		</div>
@@ -80,7 +80,7 @@ EOD;
 
 		//   Output the pagination
 		$big = 999999999;
-		echo "<div id = 'pagination' class = 'center'>";
+		echo "<div id='pagination' class='center'>";
 		echo paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',

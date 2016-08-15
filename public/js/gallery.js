@@ -77,7 +77,7 @@ $(document).ready(function() {
 		$redirect = this.href;
 		setTimeout( function(){ 
 			window.location = $redirect;
-		}, 2500);
+		}, 1000);
 	});
 
 })

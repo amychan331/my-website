@@ -205,9 +205,8 @@ nav #main-menu {
 	opacity: 0.8;
 	filter: alpha(opacity=80);
 	float: right;
-	margin: 10px 0 -15px 15px;
+	margin: 10px 0 -10px 15px;
 	overflow: hidden;
-	position: relative;
 	width: 580px;
 	z-index: 100;
 }
@@ -224,7 +223,7 @@ nav a {
 	text-align: center;
 	margin: 0px 4px 0px 4px;
 	padding: 4px 4px 8px 4px;
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 	width: 100px;
 }
 
@@ -438,6 +437,7 @@ footer {
 		position: fixed;
 		top: 0;
 		right: 0;
+		overflow: auto;
 		width: auto;
 		z-index: 300;
 	}	
@@ -493,7 +493,7 @@ footer {
 /* Laptop */
 @media only screen and (min-width: 769px) {
 	/* Fix for when nav tab have the wrong width when browser is stretch from mobile size to laptop size */
-	#primary-menu {
-		width: 90% !important;
+	nav {
+		width: 90%
 	}	
 }

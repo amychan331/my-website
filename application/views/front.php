@@ -17,6 +17,7 @@
 	<![endif]-->
 </head>
 <body>
+	<a href="#indexNav" id="skip-main">Skip to navigation</a>
 	<div id="indexContent">
 		<div id='indexArticle'>
 			<header role="banner">

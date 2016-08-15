@@ -69,7 +69,7 @@ header {
 	width: auto;
 }
 
-#indexNav a {
+#indexNav a:not(#navicon){
 	background-color: #FFFFF0;
 	/* Remove box-shadow from main stylesheet*/
 	box-shadow: none;

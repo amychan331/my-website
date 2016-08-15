@@ -31,7 +31,7 @@ class Content {
 		//The last row, where smaller code snippets without screenshots are display
 		$this->portfolio .= "<hr><article id='snippets'>";
 		$this->portfolio .= $this->iconCicle("snippets"); 
-		$this->portfolio .= $this->getDesc("snippets");
+		$this->portfolio .= $this->snippetsDesc();
 		$this->portfolio .= "</article>";
 		$this->projectsNav[] = "<a href='#snippets'>snippets</a>";
 
@@ -113,7 +113,7 @@ EOD;
 	   			$this->slider .= "<ul>";
 		    		foreach ($imgList as $img) {
 		    			$this->slider .= "
-		    			<li role='option'><div class='slide-img'><a href='" . "$this->projectsDir/$project/$img" . "'>
+		    			<li role='option'><div class='slide-img'><a href='" . "$this->projectsDir/$project/$img" . "' role='link' aria-label='$img' >
 		    				<img src='" . "$this->projectsDir/$project/$img" . "' alt='" . substr( $img, 0, (strrpos($img, '.')) ) . "'>
 		    			</a></div></li>";
 		    		}
@@ -132,7 +132,7 @@ EOD;
 	}
 
 	private function iconCicle($identifier) {
-		$this->circle = "<div class='gallery' role='group' aria-label='Circle of icons indicating what language the project used'><div id='$identifier' ";
+		$this->circle = "<div class='gallery' role='img' aria-label='Icons of programming language used'><div id='$identifier' ";
 		$this->circle .= <<< EOD
 		 class='circle'>
 			<div class='icon-circle'> 
@@ -150,6 +150,31 @@ EOD;
 		</div></div>
 EOD;
 		return $this->circle;
+	}
+
+	private function snippetsDesc() {
+		$snippetsList = ['Bayview BOOM', 'snippets' ];
+
+		$this->description = "<aside>";
+			$this->description .= "<div class='bevel top'></div>";
+			$this->description .= "<div class='description'>";
+			
+			// Looping out description for different code snippets.
+			foreach($snippetsList as $snippet) {
+				$projFile = file_get_contents("$this->textDir/$snippet.json");
+				$json = json_decode($projFile, true);
+				$this->description .= "<h2>" . $json['title'] . "</h2><br />";
+				$this->description .= "<span>" . $json['desc'] . "</span>";
+					$this->description .= "<span class ='link italic'>View code for " . $json['title'] . " at Github >> </span>";
+				$this->description .= "<a class='icon' href='" . $json['github'] . "' aria-label='Github repo of project'>";
+					$this->description .= "<i class='fa fa-github-alt fa-2x' aria-hidden='true'></i>";
+				$this->description .= "</a></p><br>";
+			}
+
+			$this->description .= "</div>";
+			$this->description .= "<div class='bevel bottom'></div>";
+		$this->description .= "</aside>";
+		return $this->description;
 	}
 }
 ?>

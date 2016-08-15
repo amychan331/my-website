@@ -9,33 +9,35 @@
 	background: rgba(255, 255, 255, 0.6);
 	display: inline-block;
 	height: 250px;
+	line-height: 0;
 	margin: 10px;
 	position: relative;
 	width: 480px;
 }
 
 .slides {
+	display: inline-block;
 	height: 100%;
-	margin: 0;
+	margin-left: 1%;
 	position: relative;
 	overflow: hidden;
 	width: 80%;
 }
 
 .slides ul {
+	display: table;
 	height: 100%;
-	left: 0;
 	list-style: none;
-	position: relative;
-	margin: 0;
-	padding: 0;
-	top: 0;
-	width: 100%
+	margin: auto auto;
+	padding-left: 0;
+	overflow: hidden;
+	table-layout: fixed;
 }
 
 .slides li {
-	display: table;
+	display: table-cell;
 	table-layout: fixed;
+	vertical-align: middle;
 }
 
 /* Needed to vertically center the image */
@@ -47,16 +49,19 @@
 
 .slides img {
 	display: table-cell;
+	left: 0;
 	width: 100%;
 	table-layout: fixed;
 }
 
 .carousel-control i {
 	color: #666666;
+	display: inline-block;
 	opacity: 0.8;
 	filter: alpha(opacity=80);
-	margin: 5px;
+	margin: 0;
 	position: relative;
+	top: 0;
 	z-index: 100;
 }
 
@@ -64,13 +69,13 @@
 	color: #4d4d4d;
 }
 
-a.prev {
+.gallery .prev {
 	float: left;
 	position: relative;
 	top: 100px;
 }
 
-a.next {
+.gallery .next {
 	float: right;
 	position: relative;
 	top: -150px;
@@ -78,6 +83,16 @@ a.next {
 
 /* So tab navigation and screen reader only see/hear the image displayed */
 .slides li:nth-child(n+2) {
+	display: none;
+	visibility: hidden;
+}
+
+.gallery .prev:nth-child(n+2) {
+	display: none;
+	visibility: hidden;
+}
+
+.gallery .next:nth-child(n+2) {
 	display: none;
 	visibility: hidden;
 }
@@ -136,7 +151,7 @@ a.next {
 
 /* Gallery Aside
 ---------------------------------*/
-aside {
+article aside {
 	background-color: rgba(255, 255, 255, 0.6);
 	display: inline-block;
 	position: relative;
@@ -192,9 +207,9 @@ aside a.icon:link, aside a.icon:visited {
 
 aside a.icon:active, aside a.icon:focus {
 	animation-name: spin;
-	animation-duration: 2s;
-	-moz-animation-duration: 2s;
-	-webkit-animation-duration: 2s;
+	animation-duration: 1s;
+	-moz-animation-duration: 1s;
+	-webkit-animation-duration: 1s;
 }
 
 /* GALLERY ICON CIRCLE
@@ -496,37 +511,46 @@ body:not(.search-results) .wp-entry .entry-summary blockquote > :last-child {
 
 /* Mobile
 ---------------------------------*/
+/* Smartphones (portrait and landscape) */
+@media only screen and (max-width: 480px) {
+	.gallery {
+		height: 250px;
+		width: 300px;
+	}
+}
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+	.gallery {
+		height: 400px;
+		width: 450px;
+	}
+}
+
 /* Smartphones and tablets (portrait and landscape) */
 @media only screen and (max-width: 768px) {
 	/* Blog */
 	#subheader i {
-		display: block;
 		clear: both;
 		text-decoration: none;
 	}
 	/* Portfolio */
-	article .gallery {
+	.gallery {
 		clear: both;
-		display: block;
-		height: 45%;
-		width: 90%;
+		text-align: center;
+		margin: auto;
 	}
-	article .slides {
-		height: 100%;
+	.slides {
+		height: 75%;
 		width: 100%;
 	}
-	.gallery .prev {
-		display: block;
+	a.prev {
 		float: none;
 		top: 0;
-		text-align: center;
 	}
-	.gallery .next {
-		display: block;
+	a.next {
 		bottom: 0;
 		float: none;
-		text-align: center;
-		top: auto;
+		top: 0;
 	}
 	#lightcontainer {
 		padding-left: 0;

@@ -5,30 +5,21 @@ $(document).ready(function() {
 	var slide_height = $('.slides').outerHeight();
 	var bottom_value = slide_height * (-1);
 
-	// Functions for sliding the image when the arrows are clicked
-	// Got the idea of sliding image height from
-	// "Create A Simple Infinite Carousel with jQuery" by Kevin Liew at http://www.queness.com/post/923/create-a-simple-infinite-carousel-with-jquery
-	$('.prev').click(function() {
-		var bottom_indent = parseInt( $('.slides ul').css('bottom') ) + slide_height;
+	// Functions for 'sliding' the image when the arrows are clicked
+	// <li> other than the first one will have visibility:hidden and display:none, thus hiding it from view.
+	$('.prev').click(function(e) {
+		e.preventDefault();
 		// Variable that directs to the currently clicked gallery
 		var thisSlide = $(this).parent().siblings('.slides').children('ul');
-		thisSlide.animate({'bottom': bottom_indent}, 200, function () {
-			$(thisSlide).children('li:last').before( $(thisSlide).children('li:first') );
-			$(thisSlide).css({'buttom': bottom_value});
-			var currentDisplay = $(thisSlide).children('li:first').find('img').attr('alt');
-		});
-		return false;
+		$(thisSlide).children('li:last').before( $(thisSlide).children('li:first') );
+
 	});
-	$('.next').click(function() {
-		var bottom_indent = parseInt( $('.slides ul').css('bottom') ) - slide_height;
+	$('.next').click(function(e) {
+		e.preventDefault();
 		// Variable that directs to the currently clicked gallery
 		var thisSlide = $(this).parent().siblings('.slides').children('ul');
-		thisSlide.animate({'bottom': bottom_indent}, 200, function () {
-			$(thisSlide).children('li:last').after( $(thisSlide).children('li:first') );
-			$(thisSlide).css({'buttom': bottom_value});
-			var currentDisplay = $(thisSlide).children('li:first').find('img').attr('alt');
-		});
-		return false;
+		$(thisSlide).children('li:last').after( $(thisSlide).children('li:first') );
+
 	});
 
 	// Function for activating a lightbox when image is clicked

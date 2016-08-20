@@ -1,4 +1,4 @@
-// Function for image sliding is modified from "Create A Simple Infinite Carousel with jQuery" by Kevin Liew at http://www.queness.com/post/923/create-a-simple-infinite-carousel-with-jquery
+// Responsive and accessible carousel with lightbox features
 $(document).ready(function() {
 
 	// Get variable of how far to slide when user click on the control buttons
@@ -6,6 +6,8 @@ $(document).ready(function() {
 	var bottom_value = slide_height * (-1);
 
 	// Functions for sliding the image when the arrows are clicked
+	// Got the idea of sliding image height from
+	// "Create A Simple Infinite Carousel with jQuery" by Kevin Liew at http://www.queness.com/post/923/create-a-simple-infinite-carousel-with-jquery
 	$('.prev').click(function() {
 		var bottom_indent = parseInt( $('.slides ul').css('bottom') ) + slide_height;
 		// Variable that directs to the currently clicked gallery
@@ -14,7 +16,6 @@ $(document).ready(function() {
 			$(thisSlide).children('li:last').before( $(thisSlide).children('li:first') );
 			$(thisSlide).css({'buttom': bottom_value});
 			var currentDisplay = $(thisSlide).children('li:first').find('img').attr('alt');
-			$(thisSlide).attr('aria-labelledby', currentDisplay);
 		});
 		return false;
 	});
@@ -26,8 +27,6 @@ $(document).ready(function() {
 			$(thisSlide).children('li:last').after( $(thisSlide).children('li:first') );
 			$(thisSlide).css({'buttom': bottom_value});
 			var currentDisplay = $(thisSlide).children('li:first').find('img').attr('alt');
-			$(thisSlide).attr('aria-labelledby', currentDisplay);
-			$('#lightcontainer img').focus();
 		});
 		return false;
 	});
@@ -37,19 +36,21 @@ $(document).ready(function() {
 		e.preventDefault();
 		var link = $(this).attr('href');
 		var project = $(this).children('img').attr('alt');
-		var lightbox = "<div id='lightbox'>" +
+		var lightbox = "<div id='lightbox' role='dialog'>" +
 			"<div id='lightcontainer'>" +
 				"<img src='" + link + "' alt='" + project + "' tabindex='1'>" +
 				"<button type='button' id='close' aria-label='close' tabindex='1'>X</button>" +
 			"</div>" +
 		"</div>";
 		$('body').append(lightbox);
+		$('#lightcontainer img').focus();
 	});
 
-	// Functions to remove lightbox when X or Esc is clicked
+	// Functions to remove lightbox when X is clicked
 	$('body').on('click', '#close', function() {
 		$('#lightbox').remove();
 	});
+
 	// Function to detect tab and Esc key entry, then focus on close button or slide image for former and close lightbox for later.
 	$('body').on('keyup', function(e) {
 		if ( $('#lightbox').is(':visible') ) {

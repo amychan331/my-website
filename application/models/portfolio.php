@@ -110,10 +110,10 @@ class Content {
 EOD;
 	    	// Main image box
 	   		$this->slider .= "<div class='slides'>";
-	   			$this->slider .= "<ul>";
+	   			$this->slider .= "<ul aria-live='polite'>";
 		    		foreach ($imgList as $img) {
 		    			$this->slider .= "
-		    			<li role='option'><div class='slide-img'><a href='" . "$this->projectsDir/$project/$img" . "' role='link' aria-label='$img' >
+		    			<li role='option'><div class='slide-img'><a href='" . "$this->projectsDir/$project/$img" . "' role='region' aria-label='$img'>
 		    				<img src='" . "$this->projectsDir/$project/$img" . "' alt='" . substr( $img, 0, (strrpos($img, '.')) ) . "'>
 		    			</a></div></li>";
 		    		}

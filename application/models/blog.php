@@ -55,7 +55,7 @@ EOD;
 		    	the_date(); echo "<br />";
 		    	the_tags('Tags: ', ' • '); echo "<br />";
 		    	// Excerpt inside this tag will be replace by full content from WordPress blog when click activates Ajax:
-		    	echo "<div class='wp-entry'>";
+		    	echo "<div class='wp-entry' aria-live='polite'>";
 					the_excerpt();
 				echo "</div>";
 				// Hidden tag contains info on number of comments, to be unhidden when Ajax expands the excerpt into content.

@@ -17,7 +17,7 @@ class Content {
 		$projectsDir = $this->projectsDir; // In order to get this variable when the anonymous function call it with use()
 		$this->projectsList = array_slice( array_filter( scandir($projectsDir), function($dir) use ($projectsDir) { return is_dir("$projectsDir/$dir"); } ), 2); // array_slice removes the "." and ".." that scandir returns
 
-		echo "<main id='content'>";
+		echo "<main id='content' tabindex='-1'>";
 		
 		// Using the list of projects, set up the subnav and article contents
 		foreach($this->projectsList as $project) {
@@ -29,7 +29,7 @@ class Content {
 		}
 
 		//The last row, where smaller code snippets without screenshots are display
-		$this->portfolio .= "<hr><article id='snippets'>";
+		$this->portfolio .= "<hr><article id='snippets' tabindex='-1'>";
 		$this->portfolio .= $this->iconCicle("snippets"); 
 		$this->portfolio .= $this->snippetsDesc();
 		$this->portfolio .= "</article>";
@@ -59,7 +59,7 @@ class Content {
 
 	private function setArticle($order, $project) {
 		$this->article = "<hr>";
-		$this->article .= "<article id='" . preg_replace('/\s+/', '', $project) . "'>";
+		$this->article .= "<article id='" . preg_replace('/\s+/', '', $project) . "' tabindex='-1'>";
 			$this->article .= $this->getGallery($order, $project);
 			$this->article .= $this->getDesc($project);
 		$this->article .= "</article>";

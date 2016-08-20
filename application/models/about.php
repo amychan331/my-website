@@ -3,7 +3,7 @@ class Content {
 	private $article;
 
 	public function __construct() {
-		echo "<main id='content'>";
+		echo "<main id='content' tabindex='-1'>";
 		$this->subheader();
 		echo $this->getArticle();
 		echo "</main>";
@@ -30,7 +30,7 @@ EOD;
 	private function setAmy() {
 $this->article .= <<< EOD
 	<hr>
-	<article id='amy'>
+	<article id='amy' tabindex='-1'>
 		<aside class='left'>
 			<img src='public/images/AmyImg.jpg' alt='Picture of Amy Yuen Ying Chan' width='200'>
 		</aside>
@@ -65,7 +65,7 @@ EOD;
 	private function setSite() {
 $this->article .= <<< EOD
 	<hr>
-	<article id='site'>
+	<article id='site' tabindex='-1'>
 		<aside id='circle' class='right' role='img' aria-label='Icons of programming language used'>
 			<div class='icon-circle'> 
 				<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">

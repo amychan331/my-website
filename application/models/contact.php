@@ -11,7 +11,7 @@ class Content {
 	private $aside;
 
 	public function __construct() {
-		echo "<main id='content'>";
+		echo "<main id='content' tabindex='-1'>";
 		$this->subheader();
 		$this->getArticle();
 		echo "</main>";

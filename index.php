@@ -11,8 +11,10 @@
 
 	# Find the page name that corresponds with the url
 	$url = $_SERVER['REQUEST_URI'];
+	if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1'||'::1') {
+		$url = str_replace("/personalProject-portfolioWebsite", "", $url);
+	}
 	$parameters = explode('/', trim($url, '/'));
-	# PARAMETERS INDEXING CHANGES WHEN GOING ON HOST SERVER.
 
 	# Extract the parameter if additional queries exist.
 	if(isset($parameters[0]) && strpos($parameters[0], '?' ) !== false ) {

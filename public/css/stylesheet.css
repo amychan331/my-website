@@ -98,6 +98,9 @@ noscript p, #noJquery {
   clear: both;
 }
 
+hr {
+    clear: both;
+}
 /* HEADER
 ---------------------------------*/
 header {
@@ -601,11 +604,18 @@ footer {
     aside#contact {
         width: 95%;
     }
+
+    #lightcontainer {
+        padding: 25px 0;
+    }
+
+    #lightbox img {
+        max-width: 90%;
+    }
 }
 
 /* Tablets (portrait and landscape) for Portfolio */
 @media only screen and (min-width: 641px) and (max-width: 1200px) {
-
     .gallery {
         clear: both;
         display: block;
@@ -621,4 +631,67 @@ footer {
         width: 65%;
     }
 
+}
+
+/* Smartphone (landscape) for Portfolio */
+@media only screen and (max-width: 641px) {
+    article {
+        text-align: center;
+    }
+
+    .gallery {
+        height: 375px;
+        float: none;
+        margin: 2%;
+        width: 475px;
+    }
+
+    .slides {
+        height: 72.5%;
+        width: 100%;
+    }
+
+    .slides ul{
+        height: 100%;
+    }
+
+    .carousel-control i {
+        display: block;
+        top: 0;
+    }
+
+    .gallery .prev {
+        float: none;
+        top: 0;
+    }
+
+    .gallery .next {
+        float: none;
+        top: 0;
+    }
+
+    .gallery+aside {
+        margin-bottom: 5%;
+        width: 95%;
+    }
+
+}
+
+/* Smartphone (potrait) for Portfolio */
+@media only screen and (max-width: 481px) {
+    .gallery {
+        height: 265px;
+        float: none;
+        margin: 0 auto 5% auto;
+        width: 290px;
+    }
+
+    .slides {
+        height: 62.5%;
+        width: 100%;
+    }
+
+    .gallery+aside {
+        width: 95%;
+    }
 }

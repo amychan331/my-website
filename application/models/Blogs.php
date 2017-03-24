@@ -8,7 +8,7 @@ class Blogs extends Model
 
     public function content() {
     	echo "<main id=\"blogs\">";
-    	echo "<h4 class=\"italic right\">Content generated from my WordPress blog: <a class=\"icon\" href=blog><i class=\"fa fa-wordpress fa-2x\" aria-hidden=\"true\"></i></a></h4>";
+    	echo "<h4 class=\"italic right\">Generated from my WordPress blog: <a class=\"icon\" href=blog><i class=\"fa fa-wordpress fa-2x\" aria-hidden=\"true\"></i></a></h4>";
     	$this->wploop();
     	echo "</main>";
     }

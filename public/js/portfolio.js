@@ -67,7 +67,7 @@ $(document).ready(function() {
 	$('a.icon').click(function(e) {
 		e.preventDefault();
 		$redirect = this.href;
-		setTimeout( function(){ 
+		setTimeout( function(){
 			window.location = $redirect;
 		}, 1000);
 	});

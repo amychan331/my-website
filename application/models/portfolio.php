@@ -1,180 +1,50 @@
 <?php
-class Content {
-	private $projectsDir;
+
+class Portfolio extends Model
+{
 	private $projectsList;
-	private $textDir;
-	private $projectsNav = array();
-	private $portfolio;
-	private $article;
-	private $slider;
-	private $circle;
-	private $description;
+	public $projects = array();
 
-	public function __construct() {
-		// Set variable
-		$this->projectsDir = "public/images";
-		$this->textDir = "db/projectDesc";
-		$projectsDir = $this->projectsDir; // In order to get this variable when the anonymous function call it with use()
-		$this->projectsList = array_slice( array_filter( scandir($projectsDir), function($dir) use ($projectsDir) { return is_dir("$projectsDir/$dir"); } ), 2); // array_slice removes the "." and ".." that scandir returns
+    public function __construct() {
+        parent::__construct();
 
-		echo "<main id='content' tabindex='-1'>";
-		
 		// Using the list of projects, set up the subnav and article contents
-		foreach($this->projectsList as $project) {
-			// Seperate out the $project string, first 3 character for order, rest the actual project name.
-			$order = substr($project, 0, 3);
-			$project = substr($project, 3);
-			$this->projectsNav[] = "<a href='#" . preg_replace('/\s+/', '', $project) . "'>$project</a>";
-			$this->portfolio .= $this->getArticle($order, $project);
-		}
+		$this->projectsList = array_slice(
+			array_filter(
+				scandir("public/images"), function($item) {
+					return is_dir("public/images/$item");
+				}
+			)
+		, 2); // array_slice removes the "." and ".." that scandir returns
 
-		//The last row, where smaller code snippets without screenshots are display
-		$this->portfolio .= "<hr><article id='snippets' tabindex='-1'>";
-		$this->portfolio .= $this->iconCicle("snippets"); 
-		$this->portfolio .= $this->snippetsDesc();
-		$this->portfolio .= "</article>";
-		$this->projectsNav[] = "<a href='#snippets'>snippets</a>";
+		$this->getData();
+    }
 
-		// Outpet the subheader and article contents.
-		$this->subheader();
-		echo $this->portfolio;
-		echo "</main>";
+    private function getData() {
+    	foreach($this->projectsList as $proj) {
+			// Seperate out the $project string, with first 3 char as list order & rest as project name.
+			$order = substr($proj, 0, 2);
+			$proj = substr($proj, 3);
+			$this->projects[$order]["Name"] = $proj;
+  			$this->setGallery($order, $proj);
+  			$this->setDesc($order, $proj);
+    	}
+    }
+
+	private function setGallery($order, $proj) {
+		$imgList = array_filter(
+			array_slice(
+				scandir("public/images/$order-$proj"), 2), function($item) use ($order, $proj) {
+					return is_file("public/images/$order-$proj/$item");
+				}
+			);
+		$this->projects[$order]["Images"] = $imgList;
 	}
 
-	private function subheader() {
-		echo "<noscript>
-    			<p>Efforts were made so this site remain functional without JavaScript... except for this - it IS a portfolio for a web developer, after all.</p>
-    			<p>JS from my site is required for the Github icon to spin when clicked, and jQuery is required to operate the image slider.</p>
-			</noscript>";
-		echo "<div id='subheader'>";
-			echo "<h1>Portfolio</h1>";
-			echo "<div id='subNav'>" . implode(' • ', $this->projectsNav) . "</div>";
-		echo "</div>";
-	}
-
-	private function getArticle($order, $project) {
-		$this->setArticle($order, $project);
-		return $this->article;
-	}
-
-	private function setArticle($order, $project) {
-		$this->article = "<hr>";
-		$this->article .= "<article id='" . preg_replace('/\s+/', '', $project) . "' tabindex='-1'>";
-			$this->article .= $this->getGallery($order, $project);
-			$this->article .= $this->getDesc($project);
-		$this->article .= "</article>";
-	}
-
-	private function getDesc($project) {
-		$projFile = file_get_contents("$this->textDir/$project.json");
-		$json = json_decode($projFile, true);
-		$this->setDesc($json);
-		return $this->description;
-	}
-
-	private function setDesc($json) {
-		$this->description = "<aside>";
-			$this->description .= "<div class='bevel top'></div>";
-			$this->description .= "<div class='description'>";
-				$this->description .= "<h2>" . $json['title'] . "</h2><br />";
-				$this->description .= "<span>" . $json['desc'] . "</span>";
-					$this->description .= "<span class ='link italic'>View code for " . $json['title'] . " at Github >> </span>";
-				$this->description .= "<a class='icon' href='" . $json['github'] . "' aria-label='Github repo of project'>";
-					$this->description .= "<i class='fa fa-github-alt fa-2x' aria-hidden='true'></i>";
-				$this->description .= "</a></p>";
-			$this->description .= "</div>";
-			$this->description .= "<div class='bevel bottom'></div>";
-		$this->description .= "</aside>";
-	}
-
-	private function getGallery($order, $project) {
-		// Loops through the img file for the directories and set the HTML to display it.
-		$project = $order . $project;
-		$projDir = "$this->projectsDir/$project";
-		$imgList = array_filter( array_slice( scandir($projDir), 2), function($file) use ($projDir) { return is_file("$projDir/$file"); } );
-		$this->setGallery($project, $imgList);
-		return $this->slider;
-	}
-
-	private function setGallery($project, $imgList) {
-		// HTML for the galleries
-		$nospaceproj = preg_replace('/\s+/', '', $project);
-		$this->slider = "<div id='$nospaceproj' class='gallery' role='listbox' aria-label='" . $project . " carousel'>";
-	    	// Left control
-			$this->slider .= <<< EOD
-			<div class="carousel-control">
-				<a href="#$nospaceproj" class="prev" role="button" aria-label="previous">
-					<i class="fa fa-chevron-circle-left fa-3x" aria-hidden="true"></i>
-				</a>
-			</div>
-EOD;
-	    	// Main image box
-	   		$this->slider .= "<div class='slides'>";
-	   			$this->slider .= "<ul aria-live='polite'>";
-		    		foreach ($imgList as $img) {
-		    			$this->slider .= "
-		    			<li role='option'><div class='slide-img'><a href='" . "$this->projectsDir/$project/$img" . "' role='region' aria-label='$img'>
-		    				<img src='" . "$this->projectsDir/$project/$img" . "' alt='" . substr( $img, 0, (strrpos($img, '.')) ) . "'>
-		    			</a></div></li>";
-		    		}
-			    $this->slider .= "</ul>";
-		    $this->slider .= "</div>";
-
-		    // Right control
-			$this->slider .= <<< EOD
-		    <div class="carousel-control">
-				<a href="#$project" class="next" role="button" aria-label="next">
-					<i class="fa fa-chevron-circle-right fa-3x" aria-hidden="true" tabindex="-1"></i>
-				</a>
-			</div>
-		</div>
-EOD;
-	}
-
-	private function iconCicle($identifier) {
-		$this->circle = "<div class='gallery' role='img' aria-label='Icons of programming language used'><div id='$identifier' ";
-		$this->circle .= <<< EOD
-		 class='circle'>
-			<div class='icon-circle'> 
-				<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
-				<ul>
-					<li class="fa-stack fa-lg" role='img' aria-label='terminal for bash scripting'>
-						<i class="fa fa-square fa-stack-2x" aria-hidden="true"></i>
-						<i class="fa fa-terminal fa-stack-1x fa-inverse" aria-hidden="true"></i>
-					</li>
-					<li><i class="devicon devicon-python-plain aria-hidden="true" title="python"></i></li>
-					<li><i class="fa fa-wordpress fa-3x" aria-hidden="true" title="wordpress"></i></li>
-					<li><i class="devicon devicon-php-plain aria-hidden="true" title="php"></i></li>
-				</ul>
-			</div>
-		</div></div>
-EOD;
-		return $this->circle;
-	}
-
-	private function snippetsDesc() {
-		$snippetsList = ['Bayview BOOM', 'snippets' ];
-
-		$this->description = "<aside>";
-			$this->description .= "<div class='bevel top'></div>";
-			$this->description .= "<div class='description'>";
-			
-			// Looping out description for different code snippets.
-			foreach($snippetsList as $snippet) {
-				$projFile = file_get_contents("$this->textDir/$snippet.json");
-				$json = json_decode($projFile, true);
-				$this->description .= "<h2>" . $json['title'] . "</h2><br />";
-				$this->description .= "<span>" . $json['desc'] . "</span>";
-					$this->description .= "<span class ='link italic'>View code for " . $json['title'] . " at Github >> </span>";
-				$this->description .= "<a class='icon' href='" . $json['github'] . "' aria-label='Github repo of project'>";
-					$this->description .= "<i class='fa fa-github-alt fa-2x' aria-hidden='true'></i>";
-				$this->description .= "</a></p><br>";
-			}
-
-			$this->description .= "</div>";
-			$this->description .= "<div class='bevel bottom'></div>";
-		$this->description .= "</aside>";
-		return $this->description;
+	private function setDesc($order, $proj) {
+		$file = json_decode( file_get_contents("db/projectDesc/$proj.json"), true);
+		$this->projects[$order]["Desc"] = $file["desc"];
+		$this->projects[$order]["Github"] = $file["github"];
 	}
 }
-?>
+

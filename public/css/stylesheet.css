@@ -1,8 +1,8 @@
 /* OVERALL
 ---------------------------------*/
 body {
-	background-image: url("../images/wood.jpg");
-	color: #4d4d4d;
+	background: white;
+	color: #4d2c17;
 	font-family: Optima, Calibri, sans-serif;
 	width: 100%;
 	height: 100%;
@@ -12,40 +12,42 @@ body {
 }
 
 h1, h2, h3, h4 {
-	color: #872B0D;
+	color: #13B0BA;
+	font-family: Optima, Calibri, sans-serif;
 }
 
-h3 {
-	margin-bottom: 1em;
+h4 {
+    margin: 0;
 }
 
-section h3 {
-	margin: 0;
+.hidden {
+    display: none;
+    visibility: hidden;
 }
 
-.left {
-	float: left;
+.error {
+    color: red;
+    font-weight: bold;
+    text-align: right;
+    width: 100%;
 }
 
-.right {
-	float: right;
+.success {
+    font-weight: bold;
+    text-align: right;
+    width: 100%;
 }
 
 .center {
 	text-align: center;
 }
 
+.right {
+    text-align: right;
+}
+
 .italic {
-	font-style: italic;
-}
-
-.underlined {
-	text-decoration: underline;
-}
-
-.bold-title { 
-	font-weight: bold;
-	clear: both;
+    font-style: italic;
 }
 
 ul.textul {
@@ -58,7 +60,7 @@ ul.textul {
 }
 
 ul.indent {
-	list-style-type: none;	
+	list-style-type: none;
 	text-align: left;
 	margin: 0px;
 	padding-left: 25px;
@@ -66,13 +68,22 @@ ul.indent {
 	margin-bottom: 0px;
 }
 
+#container a:link, #container a:visited {
+	color: #21696E;
+	text-decoration: underline dotted;
+}
+
+#container a:hover, #container a:active, #container a:focus {
+	font-weight: bold;
+}
+
 ::selection {
-	background: #DD3300;
+	background: #20A160;
 	color: white;
 }
 
 ::-moz-selection {
-	background: #DD3300;
+	background: #20A160;
 	color: white;
 }
 
@@ -89,6 +100,14 @@ noscript p, #noJquery {
 
 /* HEADER
 ---------------------------------*/
+header {
+	border-bottom: 6px solid #6E4021;
+	float: left; /** prevents strange space btw header & container **/
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
 a#skip-main {
 	left: -999px;
 	overflow: hidden;
@@ -108,142 +127,75 @@ a#skip-main:focus, a#skip-main:active {
 	width: 20%;
 }
 
-header {
-	margin: 10px;
-	width: 100%;
-	clear: both;
-}
 #logo {
-	clear: both;
 	float: left;
-	font-size: 3em;
-	font-weight: bold;
-	margin: 0;
-	margin-left: -15px;
+    width: 32.5%
 }
 
-#logo .site-title {
-	background-color: rgba(255, 255, 255, 0.8);
-    border-top: 0;
-    border-bottom: 0;
-    font-family: "Book Antiqua", Palatino, serif;
+#logo h1 {
+	font-family: "Book Antiqua", Palatino, serif;
+	font-size: 3em;
     font-style: italic;
     font-weight: bold;
-    padding: 0 20px 0 45px;
-    margin: 0;
-    text-shadow: 3px 2px 0px rgba(59,23,11,0.3);
-    -o-text-shadow: 3px 2px 0px rgba(59,23,11,0.3);
-    -moz-text-shadow: 3px 2px 0px rgba(59,23,11,0.3);
-    -webkit-text-shadow: 3px 2px 0px rgba(59,23,11,0.3);
-    width: 100%;
-}
-
-/* brevel, top, & bottom used to create the translucent background of logo */
-#logo .bevel {
-	border-color: rgba(255, 255, 255, 0.8);
-	border-style: solid;
-	border-width: 25px;
-	height: 0px;
-    padding-left: 15px;
-	width: 100%;
-}
-
-#logo .top {
-	border-top: 0;
-	border-right-color: transparent;
-}
-
-#logo .bottom {
-	border-bottom: 0;
-	border-right-color: transparent;
+    text-align: center;
+    text-shadow: 4px 3px 1px rgba(110,64,33,0.3);
+    -o-text-shadow: 4px 3px 1px rgba(110,64,33,0.3);
+    -moz-text-shadow: 4px 3px 1px rgba(110,64,33,0.3);
+    -webkit-text-shadow: 4px 3px 1px rgba(110,64,33,0.3);
+	margin: 2% 0;
 }
 
 #logo a:link, #logo a:visited {
-	color: #D45328;
+	color: #13B0BA;
 	text-decoration: none;
 }
 
 #logo a:hover, #logo a:active, #logo a:focus {
-	color: #875342;
+	color: #21696E;
 	font-weight: bold;
 	text-decoration: underline dashed;
 }
 
-#social-media {
-	float: right;
-	margin: 20px 0 20px 20px;
-	padding-right: 10%;
-}
-
-#social-media a {
-	margin-left: 12px;
-}
-
-#social-media a:link, #social-media a:visited {
-	color: white;
-	opacity: 0.8;
-	filter: alpha(opacity=80);
-}
-
-#social-media a:hover, #social-media a:active, #social-media a:focus {
-	color: #873F27;
-	opacity: 0.8;
-	filter: alpha(opacity=80);
-}
-
 /* NAVIGATION
 ---------------------------------*/
-nav {
-	display: block;
-	clear: both;
-	height: auto;
-	position: relative;
-	width: 90%;
+#primary-menu {
+	float: right;
+	width: 65%;
 }
 
-nav #main-menu {
-	opacity: 0.8;
-	filter: alpha(opacity=80);
-	float: right;
-	margin: 10px 0 -15px 15px;
-	overflow: hidden;
-	position: relative;
-	width: 580px;
-	z-index: 100;
+nav .parallelogram {
+	background-color: #cfeff1;
+	border-left: 10px solid white;
+	display: inline-block;
+	margin-right: .5%;
+	padding: 1.25em 0;
+	width: 30%;
+	text-align: center;
+    -webkit-transform: skew(330deg);
+    -moz-transform: skew(330deg);
+    -o-transform: skew(330deg);
+    transform: skew(330deg);
+    vertical-align: center;
 }
 
 nav a {
-	background: #873F27;
-	box-shadow: 6px 0 10px -4px black;
-	-o-box-shadow: 6px 0 10px -4px black;
-	-moz-box-shadow: 6px 0 10px -4px black;
-	-webkit-box-shadow: 6px 0 10px -4px black;
-	display: inline-block;
-	float: left;
-	list-style-type: none;	
-	text-align: center;
-	margin: 0px 4px 0px 4px;
-	padding: 4px 4px 8px 4px;
-	padding-bottom: 20px;
-	width: 100px;
-}
-
-nav a span {
 	display: block;
-	height: 100%;
-	width: 100px;
+	font-size: 1.5em;
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    transform: skew(30deg);
 }
 
 nav a:link, nav a:visited {
-	color: white;
+	color: #6E4021;
 	text-decoration: none;
 }
 
 nav a:hover:not(#navicon), nav a:active:not(#navicon), nav a:focus:not(#navicon) {
-	background: #FFFFF0;
-	color: #873F27;
+	color: #13B0BA;
 	font-weight: bold;
-	text-decoration: none;
+	text-decoration: underline dashed;
 }
 
 #navicon {
@@ -251,249 +203,422 @@ nav a:hover:not(#navicon), nav a:active:not(#navicon), nav a:focus:not(#navicon)
 	visibility: hidden;
 }
 
-/* SUBHEADER/SUBNAV
----------------------------------*/
-#subheader {
-	text-align: center;
-}
-
-#subheader .icon i {
-	vertical-align: middle;
-}
-
-#subNav {
-	clear: both;
-	text-align: center;
-}
-
 /* MAIN CONTAINER
 ---------------------------------*/
 #container {
-	background-color: #4d4d4d; 
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	box-shadow: 3px 3px 6px -3px black;
-	-o-box-shadow: 3px 3px 6px -3px black;
-	-moz-box-shadow: 3px 3px 6px -3px black;
-	-webkit-box-shadow: 3px 3px 6px -3px black;
-	width: 90%;
-	height: 95%;
-	position: relative;
+	clear: both;
+	display: inline-block;
 	margin: 0;
-	padding: 15px 15px 15px 0;
-	clear: both;
-	font-size: 1em;
+	padding: 1%;
 }
 
-#container main {
-	background-color: #FFFFF0;
-	background-image: url("../images/binding.png");
-	background-image: linear-gradient(left, #4d4d4d 2px, #A6A69F 10px, #D3D3C8 20px, #F2F2E4 30px, #FBFBEC 35px, #FFFFF0 40px);
-	background-image: -moz-linear-gradient(left, #4d4d4d 2px, #A6A69F 10px, #D3D3C8 20px, #F2F2E4 30px, #FBFBEC 35px, #FFFFF0 40px);
-	background-image: -o-linear-gradient(left, #4d4d4d 2px, #A6A69F 10px, #D3D3C8 20px, #F2F2E4 30px, #FBFBEC 35px, #FFFFF0 40px);
-	background-image: -webkit-linear-gradient(left, #4d4d4d 2px, #A6A69F 10px, #D3D3C8 20px, #F2F2E4 30px, #FBFBEC 35px, #FFFFF0 40px);
-	background-position: left;
-	background-repeat: repeat-y; 
-	box-shadow: 3px 3px 6px -3px black;
-	height: 100%;
-	padding: 20px 20px 20px 50px;
-	margin-top: 0;
-	clear: both;
-	overflow: auto;
-	position: relative;
+#content {
+	padding: 1%;
 }
 
-main p {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	clear: both;
+main {
+	float: left;
+	text-align: center;
+	width: 60%;
 }
 
-main a:link, main a:visited {
-	color: #DD3300;
-	text-decoration: underline dotted;
+main h1 {
+	font-family: "Book Antiqua", Palatino, serif;
+    font-size: 2.5em;
+    font-style: italic;
+    font-weight: bold;
 }
 
-main a:hover, main a:active, main a:focus {
-	color: #875342;
-	font-weight: bold;
-	text-decoration: underline dashed;
+main h2 {
+	color: #6E4021;
+    font-size: 1.25em;
 }
 
-.events {
-   margin: 10px 0;
-}
-.events p {
-    font-size: 0.9em;
-    padding-top: 3px;
+main#blogs {
+	float: none;
+	margin: auto;
+	text-align: left;
 }
 
-/* IMAGES
+main#portfolio {
+    float: none;
+    margin: auto;
+    width: 90%;
+}
+
+/* FORM
 ---------------------------------*/
-hr { 
- 	border: 0; 
- 	height: 1px; 
- 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
- 	background-image: -moz-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-	background-image: -o-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-	background-image: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
- }
-
-img .left {
-	position: absolute;
-	clear: none;
-	padding: 10px;
-	width: 100px;
-	height: 100px;
+aside#contact {
+    width: 30%;
 }
-	
+
+form h2 {
+	margin: .5em 0;
+}
+
+input {
+    border-radius: 3px;
+    color: #6e4021;
+	margin-bottom: .5em;
+    padding: .5em;
+}
+
+input:not([type=submit]) {
+	border: 1.75px solid #e2d8d2;
+    height: 1.25em;
+	padding: .5em;
+    width: 96%;
+}
+
+textarea {
+    border: 1.75px solid #e2d8d2;
+    border-radius: 3px;
+    color: #6e4021;
+    margin: .5em 0;
+    padding: .5em;
+    width: 96%;
+}
+
+input[type=submit] {
+	background-color: white;
+	border: 2px solid #6e4021;
+	font-size: .75em;
+	font-weight: bold;
+    float: right;
+}
+
+input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus {
+    background-color: #6e4021;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* COMPONENT
+---------------------------------*/
+article {
+    text-align: left;
+}
+
+aside {
+    background-color: #f0ebe8;
+    color: #6E4021;
+    float: right;
+    height: 100%;
+    position: relative;
+    padding: 1%;
+    width: 50%;
+}
+
+aside p {
+    display: table-cell;
+    height: 230px;
+    vertical-align: middle;
+}
+
+/* PORTFOLIO: SLIDER
+---------------------------------*/
+.gallery {
+    background: rgba(211, 197, 188, 0.2);
+    display: inline-block;
+    height: 250px;
+    line-height: 0;
+    margin: auto;
+    position: relative;
+    width: 500px;
+}
+
+.slides {
+    background: white;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+}
+
+.slides ul {
+    display: table;
+    height: 100%;
+    list-style: none;
+    margin: auto;
+    padding-left: 0;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+.slides li {
+    display: table-cell;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+
+/* Needed to vertically center the image */
+.slides .slide-img {
+    display: table-cell;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+
+.slides img {
+    display: table-cell;
+    left: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.carousel-control i {
+    color: #6E4021;
+    display: inline-block;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    margin: 0 5%;
+    position: relative;
+    top: 0;
+    z-index: 100;
+}
+
+.carousel-control i:hover, .carousel-control i:active, .carousel-control i:focus {
+    color: #13B0BA;
+    font-weight: bold;
+}
+
+.gallery .prev {
+    float: left;
+    position: relative;
+    margin-right: .5em; /* to fix a weird space issue between control button and image */
+    top: 100px;
+}
+
+.gallery .next {
+    float: right;
+    position: relative;
+    top: -150px;
+}
+
+/* So tab navigation and screen reader only see/hear the image displayed */
+.slides li:nth-child(n+2) {
+    display: none;
+    visibility: hidden;
+}
+
+.gallery .prev:nth-child(n+2) {
+    display: none;
+    visibility: hidden;
+}
+
+.gallery .next:nth-child(n+2) {
+    display: none;
+    visibility: hidden;
+}
+
+/* PORTFOLIO: LIGHTBOX
+---------------------------------*/
+#lightbox {
+    background: rgba(77, 77, 77, 0.6);
+    left: 0;
+    height: 100%;
+    margin: auto;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+}
+
+#lightcontainer {
+    display: inline-block;
+    height: 100%;
+    padding: 25px;
+    position: relative;
+    width: 100%;
+    overflow: auto;
+}
+
+#lightbox button {
+    background: rgba(250, 250, 250, 0.8);
+    border: 3px solid #4d4d4d;
+    border-radius: 50%;
+    display: inline-block;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
+    position: fixed;
+    text-align: center;
+    width: 24px;
+}
+
+#lightbox button:hover, #lightbox button:focus {
+    background-color: white;
+    box-shadow: 0 0 4px #4d4d4d;
+    font-weight: bold;
+}
+
+#lightbox img {
+    border: 5px solid #4d4d4d;
+    box-shadow: 0 0 25px black;
+    -webkit-box-shadow: 0 0 25px black;
+    -moz-box-shadow: 0 0 25px black;
+    max-width: 940px;
+    top: 5%;
+    margin-bottom: 5%;
+}
+
+/* PORTFOLIO: ICON ANIMATION
+---------------------------------*/
+.icon i {
+    background-color: white;
+    border-radius: 50%;
+    font-size: 1.5em;
+    padding: 3px;
+    vertical-align: middle;
+}
+
+.icon i:hover, .icon i:active, .icon i:focus {
+    font-weight: bold;
+}
+
+span.link {
+    line-height: 2em; /* so github icon don't look awkward with the short text */
+}
+
+@keyframes spin { 100% {-webkit-transform: rotate(360deg); transform: rotate(360deg);} }
+@-moz-keyframes spin { 100% {-moz-transform: rotate(360deg);} }
+@-webkit-keyframes spin { 100% {-webkit-transform: rotate(360deg);} }
+
+a.icon:link, a.icon:visited {
+    display: inline-block; /* needed for animation */
+}
+
+a.icon:active, a.icon:focus {
+    animation-name: spin;
+    animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+}
+
 /* FOOTER
 ---------------------------------*/
 footer {
-    margin: 10px 0 10px 0;
-    clear: none;
+	border-top: 6px solid #6E4021;
+    clear: both;
     color: #873F27;
+    display: content;
+    margin: 0;
+    padding-top: 2%;
     position: relative;
     width: 100%;
     text-align: center;
 }
 
+.copyright {
+	clear: both;
+}
+
+/* 	SOCIAL MEDIA
+---------------------------------*/
+#social-media {
+	clear: both;
+	text-align: center;
+}
+
+#social-media a {
+    margin: 0 1%;
+}
+
+#social-media a:link, #social-media a:visited {
+	color: #71cfd5;
+	text-decoration: none;
+}
+
+#social-media a:hover, #social-media a:active, #social-media a:focus {
+	color: #13B0BA;
+	text-decoration: none;
+}
+
 /* MEDIA QUERIES
 ---------------------------------*/
-/* Smartphone and tablet (portrait and landscape) */
-@media only screen and (max-width: 640px) {
-	header {
-		width: 72%;
-	}
-	a#navicon {
-		padding: 2px 4px;
-	}
-	a#navicon i {
-		font-size: 1.5em;
-	}
-	nav a {
-		font-size: 1.5em;
-		height: 1.5em;
-		padding: 0;
-	}
-}
-
-/* Tablets (portrait and landscape) */
-@media only screen and (min-width: 641px) and (max-width: 768px) {
-	header {
-		width: 80%;
-	}
-	a#navicon i {
-		font-size: 2em;
-	}
-	nav a {
-		font-size: 1.5em;
-		height: 2em;
-		padding: 6px 8px;
-	}
-}
 /* Smartphones and tablets (portrait and landscape) */
-@media only screen and (max-width: 768px) {
-	/* Banner */
-	header {
-		clear: none;
-		display: inline-block;
-		float: left;
-		position: relative;
-	}
+@media only screen and (max-width: 850px) {
 
-	#logo {
-		float: none;
-		margin: auto;
-		position: relative;
-		text-align: center;
-	}
+    #logo {
+        display: inline-block;
+        width: 90%; /* keeps logo from hitting the navicon */
+    }
 
-	#logo .site-title {
-		padding: 0 15px;
-	}	
+    nav #primary-menu {
+        float: none;
+        width: 100%;
+    }
 
-	#logo .bevel {
-		border-width: 15px;
-	    padding: 0px;
-	}	
+    nav a {
+        -webkit-transform: skew(0deg);
+        -moz-transform: skew(0deg);
+        -o-transform: skew(0deg);
+        transform: skew(0deg);
+    }
 
-	#logo .top, #logo .bottom {
-		border-left-color: transparent;
-	}	
-
-	/* Social Media */
-	#social-media {
-		float: none;
-		font-size: 1.5em;
-		margin: 10px auto 0 auto;
-		padding: 0;
-		text-align: center;
-	}	
-
-	/* Nav */
-	nav {
-		clear: none;
-		display: block;
-		position: fixed;
-		top: 0;
-		right: 0;
-		width: auto;
-		z-index: 300;
-	}	
+    nav a#navicon {
+        display: inline-block;
+        margin: 2%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        visibility: visible;
+        z-index: 100;
+    }
 
 	nav #main-menu {
 		clear: both;
 		display: none;
 		float: right;
-		height: 100%;
-		margin: 0;
 		position: relative;
 		visibility: hidden;
-		width: 100%;
-	}	
+        width: 100%;
+	}
 
-	nav a {
+	nav #main-menu a {
 		margin: auto;
-		width: 100%;
-	}	
-
-	nav a span {
-		display: inline-block;
-		width: 100%;
+		width: 90%;
 	}
 
-	a#navicon {
-		clear: none;
-		display: inline-block;
-		opacity: 0.8;
-		filter: alpha(opacity=80);
-		top: 0;
-		visibility: visible;
-		width: auto;
-	}
-	/* Main */
-	#container {
-		width: 95%;
-	}
+    nav .parallelogram {
+        border-bottom: 2px solid white;
+        border-left: 0;
+        -webkit-transform: skew(0deg);
+        -moz-transform: skew(0deg);
+        -o-transform: skew(0deg);
+        transform: skew(0deg);
+        width: 100%;
+    }
 
-	#container main {
-		padding: 2%;
-		padding-left: 25px;
-	}
+    main, aside {
+        margin: 2%;
+        text-align: left;
+        width: 95%;
+    }
 
-	.left {
-		clear: both;
-		float: none;
-		margin: auto;
-		text-align: center;
-	}
+    aside#contact {
+        width: 95%;
+    }
 }
 
-/* Laptop */
-@media only screen and (min-width: 769px) {
-	/* Fix for when nav tab have the wrong width when browser is stretch from mobile size to laptop size */
-	#primary-menu {
-		width: 90% !important;
-	}	
+/* Tablets (portrait and landscape) for Portfolio */
+@media only screen and (min-width: 641px) and (max-width: 1200px) {
+
+    .gallery {
+        clear: both;
+        display: block;
+        margin: 1% auto;
+        position: none;
+        width: 75%;
+    }
+
+    .gallery+aside {
+        float: none;
+        margin: 1% auto;
+        padding: 0 5%;
+        width: 65%;
+    }
+
 }

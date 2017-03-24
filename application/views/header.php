@@ -10,24 +10,29 @@
 	<meta name="author" content="Amy Yuen Ying Chan">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<link rel="stylesheet" type="text/css" href="public/css/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="public/css/<?php echo $template ?>.css">
 	<link rel="stylesheet" type="text/css" href="public/css/font-awesome/css/font-awesome.min.css">
-
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script src="public/js/mobile.js"></script>
+	<?php if (strpos($_SERVER["REQUEST_URI"], "blog" ) !== false) { echo "<script src=\"public/js/blog.js\"></script>"; } ?>
+	<?php if (strpos($_SERVER["REQUEST_URI"], "portfolio" ) !== false) { echo "<script src=\"public/js/portfolio.js\"></script>"; } ?>
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></	script>
 	<![endif]-->
 </head>
 <body>
-	<a href="#content" id="skip-main">Skip to main content</a>
-	<header role="banner">
+	<a href="main" id="skip-main">Skip to main content</a>
+
+	<header>
 		<div id="logo">
-			<div class="bevel top"></div>
-			<p class="site-title"><a href="index.html">Craft + Tech</a></p>
-			<div class="bevel bottom"></div>
+			<h1><a href="index">Craft + Tech</a></h1>
 		</div>
-		<aside id="social-media" role="complementary">
-			<a href="https://twitter.com/CraftPlusTech" title="Amy's Twitter Page"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
-			<a href="https://www.linkedin.com/in/amyyychan" title="Amy's LinkedIn Profile"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
-			<a href="https://github.com/amychan331" title="Amy's Github Repos"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
-		</aside>
+		<nav id='primary-menu' role="navigation" aria-label="Primary Menu">
+			<a href="#" id="navicon" aria-label="Expand menu bar" onclick="toggleNav()"><i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i></a>
+			<div id="main-menu">
+				<div class="parallelogram"><a href="index" aria-label="About"><span>About</span></a></div>
+				<div class="parallelogram"><a href="blogs" aria-label="Blog"><span>Blog</span></a></div>
+				<div class="parallelogram"><a href="portfolio" aria-label="Portfolio"><span>Portfolio</span></a></div>
+			</div>
+		</nav>
 	</header>
+	<div id="container">

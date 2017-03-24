@@ -1,29 +1,19 @@
 <?php
-class Content {
-	public function __construct() {
-		echo "<main id='content' tabindex='-1'>";
-		$this->subheader();
-		$this->getArticle();
-		echo "</main>";
-	}
 
-	private function subheader() {
-		echo "<noscript>
-    			<p>Efforts were made so this site remain functional without JavaScript.</p>
-    			<p>JS on this page allow you to expand the excerpts into full content. If you don't want to do that, worry not - just click the link to my WordPress account!</p>
-			</noscript>";
-		echo <<< EOD
-		<div id ='subheader'>
-			<h1>Excerpts From 
-			<a class='icon' href='http://www.craftplustech.com/blog/' aria-label="Amy's WordPress link"><i class='fa fa-wordpress fa-2x' aria-hidden='true'></i></a>
-			 My WordPress</h1>
-			<p class='italic'>Feel free to read my blog, search via tags, or subscribe either here or at my WordPress blog - everything here is extracted dynamically via a custom WordPress loop, so there's no delays!</p>
-		</div>
-		<hr>
-EOD;
-	}
+class Blogs extends Model
+{
+    public function __construct() {
+    	$this->content();
+    }
 
-	private function getArticle() {
+    public function content() {
+    	echo "<main id=\"blogs\">";
+    	echo "<h4 class=\"italic right\">Content generated from my WordPress blog: <a class=\"icon\" href=blog><i class=\"fa fa-wordpress fa-2x\" aria-hidden=\"true\"></i></a></h4>";
+    	$this->wploop();
+    	echo "</main>";
+    }
+
+	public function wploop() {
 		// Set up post query
 		//   Note that the query and navigation are designed for "Plain" setting permalinks.
 		global $wp_query;
@@ -50,7 +40,6 @@ EOD;
 		if ( $wp_query->have_posts() ) {
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
 				// Output the post
-				echo "<br />"; 
 				echo "<h2>"; the_title(); echo "</h2>";
 		    	the_date(); echo "<br />";
 		    	the_tags('Tags: ', ' • '); echo "<br />";
@@ -88,7 +77,6 @@ EOD;
 			'total' => $wp_query->max_num_pages
 		) );
 		echo "</div>";
-		wp_reset_postdata(); 
+		wp_reset_postdata();
 	}
 }
-?>

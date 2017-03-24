@@ -1,4 +1,10 @@
+.DS_Store
 blog/*
+color.txt
+wp-blog/*
 private/*
+temp
 
 !blog/wp-content/themes/*
+!wp-blog/wp-content/themes/*
+

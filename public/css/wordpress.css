@@ -1,0 +1,199 @@
+/* 
+	CSS from the WordPress theme
+---------------------------------*/
+
+/* WordPress: 3.0 - Typography
+---------------------------------*/
+.wp-entry body,
+.wp-entry button,
+.wp-entry input,
+.wp-entry select,
+.wp-entry textarea {
+	font-family: Merriweather, Georgia, serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.75;
+}
+
+.wp-entry p {
+	margin: 0 0 1.75em !important;
+}
+
+.wp-entry dfn,
+.wp-entry cite,
+.wp-entry em,
+.wp-entry i {
+	font-style: italic !important;
+}
+
+.wp-entry blockquote {
+	border: 0 solid #1a1a1a;
+	border-left-width: 4px;
+	font-size: 19px;
+	font-size: 1.1875rem;
+	font-style: italic;
+	line-height: 1.4736842105;
+	margin: 0 0 1.4736842105em;
+	padding: 0 0 0 1.263157895em;
+}
+
+.wp-entry blockquote,
+.wp-entry q {
+	quotes: none;
+}
+
+.wp-entry blockquote:before,
+.wp-entry blockquote:after,
+.wp-entry q:before,
+.wp-entry q:after {
+	content: "";
+}
+
+.wp-entry blockquote p {
+	margin-bottom: .5em !important;
+}
+
+.wp-entry blockquote cite,
+.wp-entry blockquote small {
+	display: block;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.75;
+}
+
+.wp-entry blockquote cite:before,
+.wp-entry blockquote small:before {
+	content: "\2014\00a0";
+}
+
+.wp-entry blockquote em,
+.wp-entry blockquote i,
+.wp-entry blockquote cite {
+	font-style: normal;
+}
+
+.wp-entry blockquote strong,
+.wp-entry blockquote b {
+	font-weight: 400;
+}
+
+.wp-entry blockquote > :last-child {
+	margin-bottom: 0;
+}
+
+/* WordPress: 4.0 - Elements
+---------------------------------*/
+.wp-entry body {
+	background: #1a1a1a;
+	/* Fallback for when there is no custom background color defined. */
+}
+
+.wp-entry hr {
+	background-color: #d1d1d1;
+	border: 0;
+	height: 1px;
+	margin: 0 0 1.75em;
+}
+
+.wp-entry ul,
+.wp-entry ol {
+	margin: 0 0 1.75em 1.25em;
+	padding: 0;
+}
+
+.wp-entry ul {
+	list-style: disc;
+}
+
+.wp-entry ol {
+	list-style: decimal;
+	margin-left: 1.5em;
+}
+
+.wp-entry li > ul,
+.wp-entry li > ol {
+	margin-bottom: 0;
+}
+
+.wp-entry img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+	vertical-align: middle;
+}
+
+/* WordPress: 8.0 - Alignments
+---------------------------------*/
+
+.wp-entry .alignleft {
+	float: left;
+	margin: 0.375em 1.75em 1.75em 0;
+}
+
+.wp-entry .alignright {
+	float: right;
+	margin: 0.375em 0 1.75em 1.75em;
+}
+
+.wp-entry .aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto 1.75em;
+}
+
+.wp-entry blockquote.alignleft {
+	margin: 0.3157894737em 1.4736842105em 1.473684211em 0;
+}
+
+.wp-entry blockquote.alignright {
+	margin: 0.3157894737em 0 1.473684211em 1.4736842105em;
+}
+
+.wp-entry blockquote.aligncenter {
+	margin-bottom: 1.473684211em;
+}
+
+/* WordPress: 9.0 - Clearings
+---------------------------------*/
+.wp-entry blockquote:before,
+.wp-entry blockquote:after {
+	content: "";
+	display: table;
+}
+
+.wp-entry blockquote:after {
+	clear: both;
+}
+
+/* WordPress: 11.2 - Posts and pages
+---------------------------------*/
+body:not(.search-results) .wp-entry .entry-summary blockquote {
+	border-color: currentColor;
+}
+
+body:not(.search-results) .wp-entry .entry-summary blockquote > :last-child {
+	margin-bottom: 0;
+}
+
+/* WordPress: 12.1 - Captions
+---------------------------------*/
+
+.wp-entry .wp-caption {
+	margin-bottom: 1.75em;
+	max-width: 100%;
+}
+
+.wp-entry .wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0;
+}
+
+.wp-entry .wp-caption .wp-caption-text {
+	color: #686868;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-style: italic;
+	line-height: 1.6153846154;
+	padding-top: 0.5384615385em;
+}

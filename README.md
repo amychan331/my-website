@@ -1,8 +1,12 @@
 # Craft Plus Tech: More PHP MVC. Adaptive design. Attempts on Accessibility
 
-Summary: 
-My website, work-in-progress. Its build on LAMP and with a self-made MVC since I wanted to practice it a bit more after my class projects.
+## Summary
+This is a repo for my portfolio website. The site was built on LAMP and with a self-made MVC, since I figure a small portfolio site like this would be a easy and fun to practice MVC skills back when I first started learning it.
 Designed with progressive enhancement in mind, incorporting mobile-friendly design and accessibility features.
 
-Language:
-There is an image version of this at my about page at http://craftplustech.com/about.html. But, essentially HTML, CSS, PHP, MySQL, Javascript, Ajax, and jQuery.
+## Fun features
+* The image carousel is accesible! Give it a try. If problem occur, please let me know!
+The blog page is actually generated with WordPress loop and grabs data from my WP blog on demand. Most of the code * is in the application/model/blog.php section.
+
+## Language
+HTML, CSS, JS with jQuery, PHP.

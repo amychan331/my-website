@@ -6,7 +6,7 @@ Designed with progressive enhancement in mind, incorporting mobile-friendly desi
 
 ## Fun features
 * The image carousel is accesible! Give it a try. If problem occur, please let me know!
-The blog page is actually generated with WordPress loop and grabs data from my WP blog on demand. Most of the code * is in the application/model/blog.php section.
+* The blog page is actually generated with WordPress loop and grabs data from my WP blog on demand. Most of the code is in the application/model/blog.php section.
 
 ## Language
 HTML, CSS, JS with jQuery, PHP.
